@@ -5,64 +5,594 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prisha Service & Solutions | Digital Services Mumbai</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        animation: {
+          'fade-up': 'fadeUp 0.6s ease forwards',
+          'fade-in': 'fadeIn 0.5s ease forwards',
+          'count-up': 'countUp 1s ease',
+          'float': 'float 3s ease-in-out infinite',
+        },
+        keyframes: {
+          fadeUp: {
+            '0%': { opacity: '0', transform: 'translateY(30px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          fadeIn: {
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' },
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' },
+          },
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .nav-link::after {
+    content: ''; display: block; height: 2px; width: 0;
+    background: #2563eb; transition: width 0.3s;
+  }
+  .nav-link:hover::after { width: 100%; }
+  .service-card:hover .service-icon { transform: scale(1.15) rotate(-5deg); transition: transform 0.3s; }
+  .service-icon { transition: transform 0.3s; }
+  .gradient-bg {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 40%, #e0e7ff 100%);
+  }
+  .hero-blob {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; z-index: 0;
+  }
+  .whatsapp-pulse::before {
+    content: ''; position: absolute; inset: -4px; border-radius: 50%;
+    background: #25d366; animation: pulse-ring 1.5s ease-out infinite;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .star { color: #f59e0b; }
+  .hamburger-line { display: block; width: 22px; height: 2px; background: #1e40af; margin: 5px 0; transition: all 0.3s; }
+  #menu-toggle.open .line1 { transform: translateY(7px) rotate(45deg); }
+  #menu-toggle.open .line2 { opacity: 0; }
+  #menu-toggle.open .line3 { transform: translateY(-7px) rotate(-45deg); }
+  .counter-num { font-variant-numeric: tabular-nums; }
+</style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 overflow-x-hidden">
 
-<!-- HERO -->
-<section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
-  <div>
-    <h1 class="text-4xl md:text-5xl font-bold text-blue-700 mb-4">Grow Your Business Online with Smart Digital Solutions</h1>
-    <p class="mb-6 text-lg">Websites, Google visibility, QR feedback systems, and automation tools for Mumbai businesses.</p>
-    <div class="flex gap-4">
-      <a href="tel:+919892415819" class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700">Call Now</a>
-      <a href="https://wa.me/918779266408" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-xl hover:bg-blue-50">Book Appointment</a>
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2">
+      <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center shadow">
+        <span class="text-white font-bold text-lg leading-none">P</span>
+      </div>
+      <div class="leading-tight">
+        <span class="font-bold text-blue-700 text-base block">Prisha</span>
+        <span class="text-gray-500 text-xs block -mt-0.5">Service & Solutions</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-700">
+      <li><a href="#services" class="nav-link hover:text-blue-600 transition">Services</a></li>
+      <li><a href="#why-us" class="nav-link hover:text-blue-600 transition">Why Us</a></li>
+      <li><a href="#about" class="nav-link hover:text-blue-600 transition">About</a></li>
+      <li><a href="#testimonials" class="nav-link hover:text-blue-600 transition">Testimonials</a></li>
+      <li><a href="#contact" class="nav-link hover:text-blue-600 transition">Contact</a></li>
+    </ul>
+
+    <!-- CTA + Hamburger -->
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/918779266408" target="_blank"
+         class="hidden md:inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-lg font-medium shadow transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center p-1" aria-label="Toggle menu">
+        <span class="hamburger-line line1"></span>
+        <span class="hamburger-line line2"></span>
+        <span class="hamburger-line line3"></span>
+      </button>
     </div>
   </div>
-  <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" alt="Digital business solutions workspace" class="rounded-2xl shadow-lg">
-</section>
 
-<!-- SERVICES -->
-<section class="bg-gray-50 py-16 px-6">
-  <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-      <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" class="rounded-lg mb-4" alt="Website design service">
-      <h3 class="font-semibold text-xl mb-2">Website Design</h3>
-      <p>Mobile-friendly professional websites for small businesses.</p>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-5 py-4">
+    <ul class="flex flex-col gap-4 text-sm font-medium text-gray-700">
+      <li><a href="#services" class="mobile-link block hover:text-blue-600">Services</a></li>
+      <li><a href="#why-us" class="mobile-link block hover:text-blue-600">Why Us</a></li>
+      <li><a href="#about" class="mobile-link block hover:text-blue-600">About</a></li>
+      <li><a href="#testimonials" class="mobile-link block hover:text-blue-600">Testimonials</a></li>
+      <li><a href="#contact" class="mobile-link block hover:text-blue-600">Contact</a></li>
+      <li>
+        <a href="https://wa.me/918779266408" target="_blank"
+           class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg w-full justify-center font-medium">
+          WhatsApp Us
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="gradient-bg pt-28 pb-20 px-6 overflow-hidden relative">
+  <div class="hero-blob w-72 h-72 bg-blue-400 top-10 right-10 hidden md:block" style="position:absolute"></div>
+  <div class="hero-blob w-48 h-48 bg-indigo-400 bottom-10 left-5" style="position:absolute"></div>
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="reveal-left">
+      <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+        🚀 Mumbai's Trusted Digital Partner
+      </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
+        Grow Your Business Online with
+        <span class="text-blue-600"> Smart Digital Solutions</span>
+      </h1>
+      <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+        Websites, Google visibility, QR feedback systems & automation tools — designed for Mumbai's small businesses.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="tel:+919892415819"
+           class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-xl shadow-lg shadow-blue-200 font-semibold transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/918779266408" target="_blank"
+           class="flex items-center gap-2 border-2 border-blue-600 text-blue-700 hover:bg-blue-50 px-7 py-3 rounded-xl font-semibold transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book Appointment
+        </a>
+      </div>
+      <div class="mt-8 flex items-center gap-5 text-sm text-gray-500">
+        <div class="flex items-center gap-1"><span class="text-green-500 text-base">✓</span> Free Consultation</div>
+        <div class="flex items-center gap-1"><span class="text-green-500 text-base">✓</span> Affordable Pricing</div>
+        <div class="flex items-center gap-1"><span class="text-green-500 text-base">✓</span> Local Support</div>
+      </div>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-      <img src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg" class="rounded-lg mb-4" alt="Google business profile setup">
-      <h3 class="font-semibold text-xl mb-2">Google Business Setup</h3>
-      <p>Get found on Google Maps and local search results.</p>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-      <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" class="rounded-lg mb-4" alt="Business automation tools">
-      <h3 class="font-semibold text-xl mb-2">Business Automation</h3>
-      <p>Automated sheets, reports, and customer data systems.</p>
+    <div class="reveal-right">
+      <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
+           alt="Digital business solutions workspace"
+           class="rounded-2xl shadow-2xl shadow-blue-100 w-full object-cover animate-float">
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-  <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" class="rounded-2xl shadow" alt="Professional business workspace">
-  <div>
-    <h2 class="text-3xl font-bold mb-4">About Prisha Service & Solutions</h2>
-    <p>We help Mumbai small businesses grow using practical digital tools. From websites to automation, our solutions are affordable, reliable, and designed for local success.</p>
+<!-- ===================== STATS ===================== -->
+<section class="bg-blue-600 py-12 px-6">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center">
+    <div class="reveal">
+      <div class="text-4xl font-extrabold counter-num" data-target="150">0</div>
+      <div class="text-blue-200 text-sm mt-1 font-medium">Happy Clients</div>
+    </div>
+    <div class="reveal">
+      <div class="text-4xl font-extrabold counter-num" data-target="200">0</div>
+      <div class="text-blue-200 text-sm mt-1 font-medium">Projects Completed</div>
+    </div>
+    <div class="reveal">
+      <div class="text-4xl font-extrabold counter-num" data-target="5">0</div>
+      <div class="text-blue-200 text-sm mt-1 font-medium">Years Experience</div>
+    </div>
+    <div class="reveal">
+      <div class="text-4xl font-extrabold counter-num" data-target="98">0</div>
+      <div class="text-blue-200 text-sm mt-1 font-medium">% Client Satisfaction</div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="bg-blue-600 text-white text-center py-16">
-  <h2 class="text-3xl font-bold mb-4">Ready to Take Your Business Online?</h2>
-  <a href="tel:+919892415819" class="bg-white text-blue-700 px-8 py-3 rounded-xl font-semibold shadow">Call Now</a>
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="bg-gray-50 py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">What We Offer</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Our Services</h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">End-to-end digital solutions tailored for Mumbai's small and medium businesses.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Service 1 -->
+      <div class="service-card bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group reveal">
+        <div class="relative overflow-hidden h-44">
+          <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Website design service">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <div class="absolute bottom-3 left-4">
+            <span class="bg-blue-600 text-white text-xs px-2 py-0.5 rounded-full font-medium">Most Popular</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="service-icon text-3xl mb-3">🖥️</div>
+          <h3 class="font-bold text-xl mb-2 text-gray-900">Website Design</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Mobile-friendly, fast-loading professional websites built for small businesses to convert visitors into customers.</p>
+          <a href="https://wa.me/918779266408?text=Hi, I need Website Design service" target="_blank"
+             class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1">
+            Get Started <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group reveal">
+        <div class="relative overflow-hidden h-44">
+          <img src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Google business profile setup">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="service-icon text-3xl mb-3">📍</div>
+          <h3 class="font-bold text-xl mb-2 text-gray-900">Google Business Setup</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Get verified on Google Maps, rank in local search, and attract nearby customers with a fully optimised GMB profile.</p>
+          <a href="https://wa.me/918779266408?text=Hi, I need Google Business Setup" target="_blank"
+             class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1">
+            Get Started <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group reveal">
+        <div class="relative overflow-hidden h-44">
+          <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Business automation tools">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="service-icon text-3xl mb-3">⚙️</div>
+          <h3 class="font-bold text-xl mb-2 text-gray-900">Business Automation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Automated Google Sheets, reports, forms, and customer data systems to save time and reduce manual work.</p>
+          <a href="https://wa.me/918779266408?text=Hi, I need Business Automation" target="_blank"
+             class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1">
+            Get Started <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group reveal">
+        <div class="relative overflow-hidden h-44">
+          <img src="https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="QR code feedback system">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="service-icon text-3xl mb-3">📲</div>
+          <h3 class="font-bold text-xl mb-2 text-gray-900">QR Feedback Systems</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Custom QR codes linked to feedback forms that collect customer reviews and insights effortlessly.</p>
+          <a href="https://wa.me/918779266408?text=Hi, I need a QR Feedback System" target="_blank"
+             class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1">
+            Get Started <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group reveal">
+        <div class="relative overflow-hidden h-44">
+          <img src="https://images.pexels.com/photos/6476808/pexels-photo-6476808.jpeg"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Social media marketing">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="service-icon text-3xl mb-3">📣</div>
+          <h3 class="font-bold text-xl mb-2 text-gray-900">Social Media Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Grow your brand on Instagram & WhatsApp with consistent posts, reels, and engaging content strategies.</p>
+          <a href="https://wa.me/918779266408?text=Hi, I need Social Media Management" target="_blank"
+             class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1">
+            Get Started <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group reveal">
+        <div class="relative overflow-hidden h-44">
+          <img src="https://images.pexels.com/photos/5632381/pexels-photo-5632381.jpeg"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Digital marketing">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="service-icon text-3xl mb-3">🎯</div>
+          <h3 class="font-bold text-xl mb-2 text-gray-900">Digital Marketing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Targeted online campaigns across Google and social media to bring genuine leads to your local business.</p>
+          <a href="https://wa.me/918779266408?text=Hi, I need Digital Marketing" target="_blank"
+             class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1">
+            Get Started <span>→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 text-center py-6">
-  Prisha Service & Solutions • Vile Parle East, Mumbai  
-  <br>© 2025 All Rights Reserved
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section id="why-us" class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Why Prisha</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Why Choose Us</h2>
+      <p class="text-gray-500 mt-3 max-w-lg mx-auto">We are not just a service provider — we are a growth partner for your business.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 rounded-2xl bg-blue-50 hover:bg-blue-100 transition reveal text-center">
+        <div class="text-4xl mb-3">💰</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900">Affordable Pricing</h3>
+        <p class="text-gray-500 text-sm">Budget-friendly packages designed specifically for small businesses in Mumbai.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-indigo-50 hover:bg-indigo-100 transition reveal text-center">
+        <div class="text-4xl mb-3">⚡</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900">Fast Turnaround</h3>
+        <p class="text-gray-500 text-sm">We deliver projects quickly without compromising on quality or performance.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-green-50 hover:bg-green-100 transition reveal text-center">
+        <div class="text-4xl mb-3">🛡️</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900">Reliable Support</h3>
+        <p class="text-gray-500 text-sm">Dedicated after-sales support and maintenance so your business never stops.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-orange-50 hover:bg-orange-100 transition reveal text-center">
+        <div class="text-4xl mb-3">🏙️</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900">Local Expertise</h3>
+        <p class="text-gray-500 text-sm">Based in Vile Parle East, we understand Mumbai's business ecosystem inside out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="py-20 px-6 bg-gray-50">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal-left">
+      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+           class="rounded-2xl shadow-xl w-full object-cover" alt="Professional business workspace">
+    </div>
+    <div class="reveal-right">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Our Story</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-5 text-gray-900">About Prisha Service & Solutions</h2>
+      <p class="text-gray-600 leading-relaxed mb-5">
+        We help Mumbai's small businesses thrive in the digital age. Based in Vile Parle East, we offer practical, affordable, and results-driven digital solutions — from building your first website to automating your entire customer workflow.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-7">
+        Our team combines local market knowledge with modern technology to deliver real, measurable growth for your business. We have helped over 150+ businesses across Mumbai get online and grow.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Web Design</span>
+        <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Google Business</span>
+        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Automation</span>
+        <span class="bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">QR Systems</span>
+        <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Digital Marketing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials" class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Client Love</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-900">What Our Clients Say</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-50 p-7 rounded-2xl shadow-sm hover:shadow-md transition reveal">
+        <div class="flex gap-1 mb-3">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">"Prisha built our shop website in just 3 days! Very professional work and the price was very reasonable. Our online orders have increased a lot."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">R</div>
+          <div>
+            <div class="font-semibold text-gray-900 text-sm">Ramesh Sharma</div>
+            <div class="text-gray-400 text-xs">Grocery Store Owner, Andheri</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 p-7 rounded-2xl shadow-sm hover:shadow-md transition reveal">
+        <div class="flex gap-1 mb-3">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">"They set up my Google Business profile and now my salon shows up on Google Maps. I get at least 10 new calls a week from new customers!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold">P</div>
+          <div>
+            <div class="font-semibold text-gray-900 text-sm">Priya Mehta</div>
+            <div class="text-gray-400 text-xs">Salon Owner, Vile Parle</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 p-7 rounded-2xl shadow-sm hover:shadow-md transition reveal">
+        <div class="flex gap-1 mb-3">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">"The automation system they built for our restaurant saves us 2 hours every day. Reports are automatic and inventory tracking is perfect."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">A</div>
+          <div>
+            <div class="font-semibold text-gray-900 text-sm">Anil Patil</div>
+            <div class="text-gray-400 text-xs">Restaurant Owner, Santacruz</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="contact" class="relative bg-blue-600 text-white py-20 px-6 overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+    <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-5 inline-block uppercase tracking-widest">Get In Touch</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Ready to Take Your<br>Business Online?</h2>
+    <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Get a free consultation. No commitment required. Let's talk about growing your business together.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="tel:+919892415819"
+         class="flex items-center gap-2 bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl font-bold shadow-lg transition text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+        +91 98924 15819
+      </a>
+      <a href="https://wa.me/918779266408?text=Hi, I want a free consultation" target="_blank"
+         class="flex items-center gap-2 bg-green-400 hover:bg-green-300 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition text-lg">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-gray-900 text-gray-400 pt-14 pb-6 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 mb-10">
+    <!-- Brand -->
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-lg">P</span>
+        </div>
+        <span class="text-white font-bold text-lg">Prisha Service & Solutions</span>
+      </div>
+      <p class="text-sm leading-relaxed mb-4">Mumbai's trusted digital partner for websites, Google Business, automation, and QR systems. Helping small businesses grow since 2020.</p>
+      <div class="flex gap-3">
+        <a href="https://wa.me/918779266408" target="_blank" class="w-8 h-8 bg-gray-700 hover:bg-green-600 rounded-lg flex items-center justify-center transition" title="WhatsApp">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="w-8 h-8 bg-gray-700 hover:bg-pink-600 rounded-lg flex items-center justify-center transition" title="Instagram">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Services -->
+    <div>
+      <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Services</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#services" class="hover:text-white transition">Website Design</a></li>
+        <li><a href="#services" class="hover:text-white transition">Google Business Setup</a></li>
+        <li><a href="#services" class="hover:text-white transition">Business Automation</a></li>
+        <li><a href="#services" class="hover:text-white transition">QR Feedback Systems</a></li>
+        <li><a href="#services" class="hover:text-white transition">Digital Marketing</a></li>
+      </ul>
+    </div>
+    <!-- Contact -->
+    <div>
+      <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</h4>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-start gap-2">
+          <span class="text-blue-400 mt-0.5">📍</span>
+          <span>Vile Parle East, Mumbai, Maharashtra</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-blue-400">📞</span>
+          <a href="tel:+919892415819" class="hover:text-white transition">+91 98924 15819</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-green-400">💬</span>
+          <a href="https://wa.me/918779266408" class="hover:text-white transition">+91 87792 66408</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
+    <span>© 2025 Prisha Service & Solutions. All Rights Reserved.</span>
+    <span class="text-gray-600">Designed with ❤️ for Mumbai Businesses</span>
+  </div>
 </footer>
 
+<!-- ===================== FLOATING WHATSAPP ===================== -->
+<a href="https://wa.me/918779266408?text=Hi, I want to know more about your services" target="_blank"
+   class="whatsapp-pulse fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition-transform hover:scale-110"
+   title="Chat on WhatsApp">
+  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ===================== BACK TO TOP ===================== -->
+<button id="back-to-top"
+   class="fixed bottom-24 right-6 z-50 w-10 h-10 bg-blue-600 text-white rounded-full shadow-lg items-center justify-center hidden hover:bg-blue-700 transition text-lg font-bold"
+   onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  // Hamburger Menu
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mobileMenu.classList.toggle('hidden');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  // Scroll Reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // Counter Animation
+  function animateCounter(el, target, duration = 1500) {
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + (target === 98 ? '%' : '+'); clearInterval(timer); }
+      else el.textContent = start;
+    }, 16);
+  }
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        animateCounter(el, parseInt(el.dataset.target));
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter-num').forEach(el => statObserver.observe(el));
+
+  // Back to Top
+  const backBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) backBtn.classList.remove('hidden'), backBtn.classList.add('flex');
+    else backBtn.classList.add('hidden'), backBtn.classList.remove('flex');
+  });
+
+  // Navbar scroll shadow
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('shadow-md');
+    else navbar.classList.remove('shadow-md');
+  });
+
+  // Smooth anchor scroll offset for fixed navbar
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 72;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 </body>
 </html>
