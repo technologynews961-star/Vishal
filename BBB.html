@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Beautiful Beauty Studio & Academy | Mumbai</title>
+    <meta name="description" content="Premium Salon Services for skin, hair, spa, bridal make-up and professional training in makeup & hairstyling by Sunieta.P in Dadar West, Mumbai.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B1B3D',   /* Deep Navy Blue */
+                            gold: '#D4AF37',   /* Premium Gold */
+                            goldLight: '#E8CA6A', 
+                            light: '#FDFBF7',  /* Off-white/Cream background */
+                            gray: '#4A4A4A'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'infinite-scroll': 'scroll 30s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Slider & Utilities -->
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(to right, #D4AF37, #B58500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #B58500 100%);
+        }
+
+        /* Hide scrollbar for review slider but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Image hover zoom effect */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom {
+            transition: transform 0.5s ease;
+        }
+        .img-zoom-container:hover .img-zoom {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-gray bg-brand-light antialiased selection:bg-brand-gold selection:text-white relative">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919869826963" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 flex items-center justify-center group" aria-label="WhatsApp Appointment">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Book Appointment</span>
+    </a>
+
+    <!-- Top Bar -->
+    <div class="bg-brand-blue text-white text-xs md:text-sm py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-phone-alt text-brand-gold mr-2"></i> +91 98698 26963</span>
+                <span><i class="fas fa-envelope text-brand-gold mr-2"></i> sunietap@yahoo.in</span>
+                <span><i class="fas fa-clock text-brand-gold mr-2"></i> 10:30 AM - 08:00 PM (Mon Closed)</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="bg-brand-gold text-brand-blue px-2 py-1 rounded text-xs font-bold"><i class="fab fa-google mr-1"></i> 4.6/5 Rating</span>
+                <a href="https://www.facebook.com/share/1DHMze9JC1/?mibextid=wwXIfr" target="_blank" class="hover:text-brand-gold transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/bbeauttifulacademy?igsh=czRsaTc5NDRmaGx5" target="_blank" class="hover:text-brand-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@bbeauttifulbeautystudio7494?si=weIDIHXqIp9fOaoP" target="_blank" class="hover:text-brand-gold transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav sticky top-0 z-40 w-full shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center flex-shrink-0">
+                    <img class="h-16 w-auto object-contain" src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420275/Logo_uvua4b.jpg" alt="B Beautiful Beauty Studio Logo" onerror="this.src='https://via.placeholder.com/150x60?text=B+Beautiful'">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-brand-gold font-medium transition">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-brand-gold font-medium transition">About</a>
+                    <a href="#services" class="text-gray-800 hover:text-brand-gold font-medium transition">Services</a>
+                    <a href="#gallery" class="text-gray-800 hover:text-brand-gold font-medium transition">Gallery</a>
+                    <a href="#reviews" class="text-gray-800 hover:text-brand-gold font-medium transition">Reviews</a>
+                    <a href="https://wa.me/919869826963" target="_blank" class="gold-gradient-bg text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:-translate-y-0.5 transition duration-300">Book Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-brand-blue hover:text-brand-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#home" class="block px-3 py-2 text-gray-800 hover:text-brand-gold font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-800 hover:text-brand-gold font-medium">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-800 hover:text-brand-gold font-medium">Services</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-800 hover:text-brand-gold font-medium">Gallery</a>
+                <a href="#reviews" class="block px-3 py-2 text-gray-800 hover:text-brand-gold font-medium">Reviews</a>
+                <a href="https://wa.me/919869826963" target="_blank" class="block mt-4 w-full gold-gradient-bg text-white px-6 py-3 rounded-full font-semibold">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-brand-blue overflow-hidden">
+        <!-- Background Pattern/Overlay -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-16 pb-20 lg:pt-24 lg:pb-28 flex flex-col lg:flex-row items-center">
+            
+            <!-- Hero Content -->
+            <div class="w-full lg:w-1/2 text-center lg:text-left z-10">
+                <div class="inline-block bg-brand-gold/20 text-brand-gold px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide mb-6 border border-brand-gold/30">
+                    <i class="fas fa-star mr-1"></i> 4.6 Rated Women-Owned Business
+                </div>
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Reveal Your True <span class="gold-gradient-text">Radiance</span>
+                </h1>
+                <p class="text-gray-300 text-lg sm:text-xl mb-8 max-w-2xl mx-auto lg:mx-0 font-light">
+                    Mumbai's premier Beauty Studio & Academy. Expert services for skin, hair, spa, bridal make-up, and professional training.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://wa.me/919869826963" target="_blank" class="gold-gradient-bg text-white px-8 py-3.5 rounded-full font-semibold shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] hover:-translate-y-1 transition duration-300 flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-xl mr-2"></i> Book Appointment
+                    </a>
+                    <a href="tel:09869826963" class="bg-transparent border border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-brand-blue transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-phone-alt mr-2"></i> Call Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="w-full lg:w-1/2 mt-12 lg:mt-0 relative z-10 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <!-- Decorative Frame -->
+                    <div class="absolute inset-0 border-2 border-brand-gold rounded-t-full rounded-b-xl transform translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beauty Studio Model" class="relative rounded-t-full rounded-b-xl shadow-2xl object-cover h-[500px] w-full" onerror="this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Trust Banner -->
+    <section class="bg-white py-10 shadow-sm relative z-20 -mt-8 mx-4 sm:mx-8 lg:mx-auto max-w-6xl rounded-2xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-6 text-center">
+            <div class="flex flex-col items-center">
+                <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand-gold mb-3 shadow-sm">
+                    <i class="fas fa-female text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">Women-Owned</h3>
+                <p class="text-xs text-gray-500 mt-1">Empowering beauty</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand-gold mb-3 shadow-sm">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">Pro Academy</h3>
+                <p class="text-xs text-gray-500 mt-1">Expert training available</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand-gold mb-3 shadow-sm">
+                    <i class="fas fa-calendar-check text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">Appointments</h3>
+                <p class="text-xs text-gray-500 mt-1">Recommended for care</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand-gold mb-3 shadow-sm">
+                    <i class="fas fa-wallet text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">Easy Payments</h3>
+                <p class="text-xs text-gray-500 mt-1">Google Pay & NFC Accepted</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                
+                <!-- About Image (Owner) -->
+                <div class="w-full lg:w-5/12 relative">
+                    <div class="absolute -inset-4 bg-brand-gold/20 rounded-3xl transform -rotate-3"></div>
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420276/Owner_s99ozk.jpg" alt="Sunieta P - Owner" class="relative rounded-3xl shadow-xl w-full object-cover z-10" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl z-20 border border-gray-100 flex items-center gap-3">
+                        <div class="bg-brand-blue text-white w-10 h-10 flex items-center justify-center rounded-full">
+                            <i class="fas fa-star text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800 text-lg leading-none">4.6</p>
+                            <p class="text-xs text-gray-500">Google Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Text -->
+                <div class="w-full lg:w-7/12 mt-8 lg:mt-0">
+                    <p class="text-brand-gold font-semibold uppercase tracking-wider text-sm mb-2">About The Studio</p>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-blue mb-6">Expertise, Elegance, and Empowerment.</h2>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 border-l-4 border-brand-gold pl-3">Meet Sunieta.P</h3>
+                    <p class="text-brand-gold font-medium mb-4">Personality Development Coach & Master Beauty Expert</p>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Welcome to <strong>B Beautiful Beauty Studio and Academy</strong>, proudly women-owned and serving the vibrant community of Dadar West, Mumbai. Our sanctuary offers a comprehensive range of premium salon services tailored for skin, hair, and spa wellness.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Beyond offering flawless bridal makeups and rejuvenating spa treatments, Sunieta.P leads our professional academy. We train the next generation of beauty experts in advanced makeup and hairstyling techniques, intertwined with essential personality development coaching to ensure complete professional growth.
+                    </p>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Specialized Bridal Make-up & Hair Styling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Professional Academy for Aspiring Beauticians</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Modern Amenities including Private Restrooms</span>
+                        </li>
+                    </ul>
+
+                    <a href="#services" class="inline-block border-2 border-brand-blue text-brand-blue px-6 py-2.5 rounded-full font-semibold hover:bg-brand-blue hover:text-white transition duration-300">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="text-brand-gold font-semibold uppercase tracking-wider text-sm mb-2">What We Offer</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-blue mb-4">Our Premium Services</h2>
+                <p class="text-gray-600">From everyday grooming to your special day, we provide meticulous services utilizing top-tier products to bring out your best self.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Skin -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="img-zoom-container h-56 w-full relative">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skin Care Services" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-8 right-6 bg-brand-gold text-white w-12 h-12 rounded-full flex items-center justify-center border-4 border-brand-light shadow-md">
+                            <i class="fas fa-spa text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Skin Care & Facials</h3>
+                        <p class="text-gray-600 text-sm mb-4">Rejuvenating facials, deep cleansing, and advanced skin therapies to maintain a youthful, glowing complexion.</p>
+                        <a href="https://wa.me/919869826963" target="_blank" class="text-brand-gold font-semibold text-sm hover:text-brand-blue transition flex items-center">
+                            Book Service <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Hair -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="img-zoom-container h-56 w-full relative">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hair Styling Services" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-8 right-6 bg-brand-gold text-white w-12 h-12 rounded-full flex items-center justify-center border-4 border-brand-light shadow-md">
+                            <i class="fas fa-cut text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Hair Styling & Care</h3>
+                        <p class="text-gray-600 text-sm mb-4">Expert haircuts, coloring, keratin treatments, and styling to perfectly complement your facial features.</p>
+                        <a href="https://wa.me/919869826963" target="_blank" class="text-brand-gold font-semibold text-sm hover:text-brand-blue transition flex items-center">
+                            Book Service <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Spa -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="img-zoom-container h-56 w-full relative">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spa Services" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-8 right-6 bg-brand-gold text-white w-12 h-12 rounded-full flex items-center justify-center border-4 border-brand-light shadow-md">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Relaxing Spa</h3>
+                        <p class="text-gray-600 text-sm mb-4">Melt away stress with our comprehensive spa treatments, massages, and body therapies designed for ultimate relaxation.</p>
+                        <a href="https://wa.me/919869826963" target="_blank" class="text-brand-gold font-semibold text-sm hover:text-brand-blue transition flex items-center">
+                            Book Service <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Bridal -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="img-zoom-container h-56 w-full relative">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bridal Makeup" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-8 right-6 bg-brand-gold text-white w-12 h-12 rounded-full flex items-center justify-center border-4 border-brand-light shadow-md">
+                            <i class="fas fa-ring text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Bridal Make-up</h3>
+                        <p class="text-gray-600 text-sm mb-4">Flawless, long-lasting bridal makeup packages to ensure you look breathtaking on your special day.</p>
+                        <a href="https://wa.me/919869826963" target="_blank" class="text-brand-gold font-semibold text-sm hover:text-brand-blue transition flex items-center">
+                            Book Consult <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Academy -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-2">
+                    <div class="flex flex-col md:flex-row h-full">
+                        <div class="img-zoom-container h-56 md:h-auto w-full md:w-1/2 relative">
+                            <img src="https://www.weddingmakeups.in/wp-content/uploads/2024/07/womens-hair-styling.webp" alt="Professional Academy" class="img-zoom w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition duration-300"></div>
+                        </div>
+                        <div class="p-6 md:p-8 w-full md:w-1/2 flex flex-col justify-center">
+                            <div class="inline-block bg-brand-gold/10 text-brand-gold px-3 py-1 rounded-full text-xs font-bold w-max mb-3">
+                                Enrolling Now
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue mb-3">Professional Academy</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Join our certified courses led by Sunieta.P. Master the art of professional makeup, advanced hairstyling, and gain essential personality development coaching to launch your beauty career.</p>
+                            <a href="https://wa.me/919869826963" target="_blank" class="gold-gradient-bg text-white px-6 py-2.5 rounded-full font-semibold w-max hover:shadow-md transition">
+                                Course Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery Section -->
+    <section id="gallery" class="py-16 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10">
+                <div>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-blue">Our Work Gallery</h2>
+                    <p class="text-gray-600 mt-2">A glimpse into our studio & real client results.</p>
+                </div>
+                <a href="https://www.instagram.com/bbeauttifulacademy?igsh=czRsaTc5NDRmaGx5" target="_blank" class="mt-4 md:mt-0 text-brand-gold font-medium hover:text-brand-blue transition flex items-center">
+                    <i class="fab fa-instagram mr-2 text-xl"></i> View More on Instagram
+                </a>
+            </div>
+
+            <!-- Gallery Grid (Masonry style emulation using grid) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <!-- Row 1 -->
+                <div class="img-zoom-container rounded-lg overflow-hidden row-span-2 shadow-sm">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420277/image3_jab5pl.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                <div class="img-zoom-container rounded-lg overflow-hidden shadow-sm">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420276/image1_fnd8sw.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                <div class="img-zoom-container rounded-lg overflow-hidden shadow-sm">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420273/image2_dz8phq.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                <div class="img-zoom-container rounded-lg overflow-hidden row-span-2 shadow-sm">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420272/image4_cunhng.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                <!-- Row 2 -->
+                <div class="img-zoom-container rounded-lg overflow-hidden shadow-sm">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420272/image6_uay98z.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                <div class="img-zoom-container rounded-lg overflow-hidden shadow-sm">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420271/image5_rtal6c.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                <!-- Add features images to gallery as well -->
+                <div class="img-zoom-container rounded-lg overflow-hidden shadow-sm col-span-2">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420268/image7_tcw1o0.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+                 <div class="img-zoom-container rounded-lg overflow-hidden shadow-sm col-span-2">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420260/image8_ovwdip.jpg" class="img-zoom w-full h-full object-cover" alt="Gallery Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section (Auto-Scrolling Image Slider) -->
+    <section id="reviews" class="py-20 bg-brand-blue overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">Client Love & Feedback</h2>
+            <div class="flex justify-center items-center space-x-1 text-brand-gold text-xl">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="text-white ml-2 text-lg font-semibold">4.6 Google Rating</span>
+            </div>
+        </div>
+
+        <!-- Infinite CSS Marquee Slider -->
+        <div class="relative w-full flex overflow-x-hidden group">
+            <!-- Double container for seamless loop -->
+            <div class="animate-infinite-scroll flex items-center space-x-8 whitespace-nowrap px-4 group-hover:[animation-play-state:paused]">
+                <!-- Original set -->
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421136/review.png3_zcg4uq.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421136/review.png4_qawqvc.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421136/review.png2_aw5tde.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421137/review1_dhwpwh.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421151/review_hoaeyy.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                
+                <!-- Duplicate set for seamless loop -->
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421136/review.png3_zcg4uq.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421136/review.png4_qawqvc.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421136/review.png2_aw5tde.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421137/review1_dhwpwh.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+                <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776421151/review_hoaeyy.png" alt="Client Review" class="h-64 md:h-80 w-auto rounded-xl shadow-lg border-2 border-brand-gold/30 object-contain bg-white">
+            </div>
+        </div>
+        
+        <!-- Gradient masks for smooth edges -->
+        <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-brand-blue to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-brand-blue to-transparent z-10 pointer-events-none"></div>
+    </section>
+
+    <!-- Large CTA Section -->
+    <section class="py-16 bg-white border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-blue mb-6">Ready to Experience the Best in Beauty?</h2>
+            <p class="text-gray-600 mb-8 text-lg">Appointments are highly recommended to ensure you get dedicated time. Contact us today!</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/919869826963" target="_blank" class="w-full sm:w-auto bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition shadow-lg flex items-center justify-center">
+                    <i class="fab fa-whatsapp text-2xl mr-2"></i> WhatsApp Us
+                </a>
+                <a href="tel:09869826963" class="w-full sm:w-auto gold-gradient-bg text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg transition flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Call 09869826963
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Contact Info -->
+                <div class="w-full lg:w-5/12 bg-brand-blue text-white p-10 lg:p-12">
+                    <h3 class="font-heading text-3xl font-bold mb-6">Get In Touch</h3>
+                    <p class="text-gray-300 mb-8 font-light">We’d love to hear from you. Visit our studio or reach out via phone or email.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-brand-gold/20 p-3 rounded-full text-brand-gold mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Location</h4>
+                                <p class="text-gray-300 text-sm mt-1 leading-relaxed">
+                                    Shop no. 37, Headvakar wadi.2<br>
+                                    D. S. BABREKAR ROAD, Gokhale Rd,<br>
+                                    Dadar West, Mumbai, Maharashtra 400028
+                                </p>
+                                <a href="https://maps.app.goo.gl/fq7AGk9oq6t2spqz7" target="_blank" class="text-brand-gold text-sm font-semibold mt-2 inline-block hover:underline">Open in Google Maps</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="bg-brand-gold/20 p-3 rounded-full text-brand-gold mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Contact</h4>
+                                <p class="text-gray-300 text-sm mt-1">098698 26963</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="bg-brand-gold/20 p-3 rounded-full text-brand-gold mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p class="text-gray-300 text-sm mt-1">sunietap@yahoo.in</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-brand-gold/20 p-3 rounded-full text-brand-gold mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Timings</h4>
+                                <p class="text-gray-300 text-sm mt-1">10:30 AM to 08:00 PM</p>
+                                <span class="text-red-400 text-xs font-bold mt-1 block">Monday Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form & Map -->
+                <div class="w-full lg:w-7/12 p-10 lg:p-12 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-heading text-2xl font-bold text-brand-blue mb-6">Send an Inquiry</h3>
+                        <form class="space-y-4 mb-8" onsubmit="event.preventDefault(); alert('Thank you! This is a mockup form. In production, this will send an email or WhatsApp message.');">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" required>
+                                <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" required>
+                            </div>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition text-gray-500">
+                                <option value="" disabled selected>Select Service Interest</option>
+                                <option value="bridal">Bridal Makeup</option>
+                                <option value="hair">Hair Care / Styling</option>
+                                <option value="skin">Skin Care / Facial</option>
+                                <option value="spa">Spa Service</option>
+                                <option value="academy">Academy Courses</option>
+                            </select>
+                            <button type="submit" class="w-full gold-gradient-bg text-white font-bold py-3 rounded-lg hover:shadow-lg transition duration-300">Submit Request</button>
+                        </form>
+                    </div>
+
+                    <!-- Embedded Map Placeholder -->
+                    <div class="w-full h-48 bg-gray-200 rounded-xl overflow-hidden relative">
+                        <!-- Using generic Mumbai dadar coordinates for iframe since shortlink can't be direct embedded without API key -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15086.5413349141!2d72.82772580796333!3d19.01953255140614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce9ce1b7c433%3A0xcb1bd2199b4566c3!2sDadar%20West%2C%20Dadar%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050e20] text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                
+                <!-- Brand -->
+                <div class="flex flex-col items-center md:items-start">
+                    <img class="h-16 w-auto mb-4 bg-white p-1 rounded" src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776420275/Logo_uvua4b.jpg" alt="Logo" onerror="this.src='https://via.placeholder.com/150x60?text=B+Beautiful'">
+                    <p class="text-sm">B Beautiful Beauty Studio and Academy.<br>Enhancing beauty, empowering careers.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center">
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <a href="#home" class="hover:text-brand-gold transition">Home</a>
+                        <a href="#about" class="hover:text-brand-gold transition">About</a>
+                        <a href="#services" class="hover:text-brand-gold transition">Services</a>
+                        <a href="#gallery" class="hover:text-brand-gold transition">Gallery</a>
+                        <a href="https://maps.app.goo.gl/fq7AGk9oq6t2spqz7" target="_blank" class="hover:text-brand-gold transition">Directions</a>
+                    </div>
+                </div>
+
+                <!-- Social & Payments -->
+                <div class="flex flex-col items-center md:items-end">
+                    <h4 class="text-white font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-6 text-xl">
+                        <a href="https://www.instagram.com/bbeauttifulacademy?igsh=czRsaTc5NDRmaGx5" target="_blank" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1DHMze9JC1/?mibextid=wwXIfr" target="_blank" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@bbeauttifulbeautystudio7494?si=weIDIHXqIp9fOaoP" target="_blank" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/919869826963" target="_blank" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm">
+                        <i class="fab fa-google-pay text-2xl text-white"></i>
+                        <span>NFC Payments Accepted</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-xs">
+                <p>&copy; 2024 B Beautiful Beauty Studio and Academy. All rights reserved.</p>
+                <p class="mt-1">Operated by Sunieta.P | Dadar West, Mumbai.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
