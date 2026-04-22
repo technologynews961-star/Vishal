@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haircraft Unisex Salon | Premium Salon Services in Mumbai</title>
+    <meta name="description" content="Professional salon services for skin, hair, and bridal make-up in Andheri East, Mumbai. Book your appointment today!">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f9f9f9',
+                            100: '#f2f2f2',
+                            200: '#e6e6e6',
+                            300: '#d9d9d9',
+                            400: '#cccccc',
+                            500: '#bfbfbf',
+                            600: '#808080',
+                            700: '#4d4d4d',
+                            800: '#262626',
+                            900: '#111111',
+                            950: '#0a0a0a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Slider */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased selection:bg-brand-900 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-brand-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-2xl font-bold tracking-tight text-brand-950 uppercase">
+                        Haircraft<span class="text-brand-500 text-sm ml-2 font-sans font-normal tracking-widest hidden sm:inline-block">Unisex Salon</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-sm font-medium text-brand-600 hover:text-brand-950 transition">Services</a>
+                    <a href="#about" class="text-sm font-medium text-brand-600 hover:text-brand-950 transition">About</a>
+                    <a href="#gallery" class="text-sm font-medium text-brand-600 hover:text-brand-950 transition">Gallery</a>
+                    <a href="#reviews" class="text-sm font-medium text-brand-600 hover:text-brand-950 transition">Reviews</a>
+                    <a href="https://wa.me/919702761910" target="_blank" class="bg-brand-950 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-800 transition shadow-lg shadow-brand-900/20">
+                        Book Appointment
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-900 hover:text-brand-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brand-200">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-brand-700 hover:bg-brand-50 rounded-md">Services</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-brand-700 hover:bg-brand-50 rounded-md">About</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium text-brand-700 hover:bg-brand-50 rounded-md">Gallery</a>
+                <a href="#reviews" class="block px-3 py-2 text-base font-medium text-brand-700 hover:bg-brand-50 rounded-md">Reviews</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-brand-700 hover:bg-brand-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-brand-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <div class="text-center lg:text-left text-white">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-brand-200 text-sm font-medium mb-6 backdrop-blur-sm border border-white/20">
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <span>4.0 Google Rating | Open Every Day</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
+                        Refine Your Style. <br>
+                        <span class="text-brand-400 italic font-normal">Reveal Your Beauty.</span>
+                    </h1>
+                    <p class="text-lg text-brand-300 mb-8 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Expert salon services for skin, hair, and bridal makeup in Andheri East. Experience premium grooming tailored just for you.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/919702761910" target="_blank" class="inline-flex justify-center items-center gap-2 bg-white text-brand-950 px-8 py-4 rounded-full font-medium hover:bg-brand-100 transition duration-300">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            Book Appointment
+                        </a>
+                        <a href="tel:09702761910" class="inline-flex justify-center items-center gap-2 bg-transparent border border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition duration-300">
+                            <i class="fas fa-phone-alt"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative mx-auto w-full max-w-lg lg:max-w-none mt-10 lg:mt-0">
+                    <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                        <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847675/WhatsApp_Image_2026-04-22_at_2.07.41_PM_1_gacink.jpg" alt="Salon Professional Styling" class="object-cover w-full h-full transform hover:scale-105 transition duration-700">
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center">
+                            <i class="fas fa-cut text-brand-900 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-900">Expert Stylists</p>
+                            <p class="text-xs text-brand-600">Professional Care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-950 mb-4">Our Premium Services</h2>
+                <div class="w-20 h-1 bg-brand-900 mx-auto mb-6"></div>
+                <p class="text-brand-600 font-light">From everyday grooming to your special day, we offer comprehensive beauty and hair solutions designed to make you look and feel your absolute best.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group rounded-2xl bg-brand-50 overflow-hidden border border-brand-100 hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" alt="Hair Styling & Cutting" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-6 border border-brand-100">
+                            <i class="fas fa-cut text-brand-900"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brand-950 mb-2">Hair Styling & Cutting</h3>
+                        <p class="text-brand-600 text-sm leading-relaxed mb-6">Precision haircuts, creative styling, and professional hair coloring tailored to your unique personality.</p>
+                        <a href="https://wa.me/919702761910" target="_blank" class="text-sm font-medium text-brand-900 group-hover:text-brand-600 inline-flex items-center gap-1 transition">
+                            Book Service <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group rounded-2xl bg-brand-50 overflow-hidden border border-brand-100 hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800" alt="Skin Care Treatments" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-6 border border-brand-100">
+                            <i class="fas fa-spa text-brand-900"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brand-950 mb-2">Skin Care & Facials</h3>
+                        <p class="text-brand-600 text-sm leading-relaxed mb-6">Rejuvenating skin treatments, deep cleansing, and advanced facials for a healthy, glowing complexion.</p>
+                        <a href="https://wa.me/919702761910" target="_blank" class="text-sm font-medium text-brand-900 group-hover:text-brand-600 inline-flex items-center gap-1 transition">
+                            Book Service <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group rounded-2xl bg-brand-50 overflow-hidden border border-brand-100 hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=800" alt="Bridal & Professional Makeup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-6 border border-brand-100">
+                            <i class="fas fa-magic text-brand-900"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brand-950 mb-2">Bridal & Party Makeup</h3>
+                        <p class="text-brand-600 text-sm leading-relaxed mb-6">Flawless, long-lasting professional makeup for weddings, parties, and special occasions. Be the center of attention.</p>
+                        <a href="https://wa.me/919702761910" target="_blank" class="text-sm font-medium text-brand-900 group-hover:text-brand-600 inline-flex items-center gap-1 transition">
+                            Book Service <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-brand-100 border-y border-brand-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <i class="fas fa-check-circle text-3xl text-brand-900 mb-4"></i>
+                    <h4 class="font-bold text-brand-950 mb-1">Local Trust</h4>
+                    <p class="text-xs text-brand-600">Established in J B Nagar</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-child text-3xl text-brand-900 mb-4"></i>
+                    <h4 class="font-bold text-brand-950 mb-1">Family Friendly</h4>
+                    <p class="text-xs text-brand-600">Great services for kids</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-credit-card text-3xl text-brand-900 mb-4"></i>
+                    <h4 class="font-bold text-brand-950 mb-1">Easy Payments</h4>
+                    <p class="text-xs text-brand-600">Cards, GPay & NFC accepted</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-clock text-3xl text-brand-900 mb-4"></i>
+                    <h4 class="font-bold text-brand-950 mb-1">Open Everyday</h4>
+                    <p class="text-xs text-brand-600">10:00 AM to 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847674/WhatsApp_Image_2026-04-22_at_2.07.42_PM_1_dvlgds.jpg" alt="Salon Interior" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                        <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847675/WhatsApp_Image_2026-04-22_at_2.07.41_PM_3_aaykcb.jpg" alt="Salon Work" class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8">
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-full shadow-2xl border-4 border-brand-50">
+                        <div class="text-center">
+                            <span class="block text-3xl font-serif font-bold text-brand-900">4.0</span>
+                            <span class="flex text-yellow-400 text-sm mt-1 mb-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-950 mb-6">Experience the Best in Grooming & Styling</h2>
+                    <p class="text-brand-600 leading-relaxed mb-6 font-light">
+                        Located in the heart of Andheri East, <strong>Haircraft Unisex Salon</strong> is dedicated to bringing out the best version of you. Whether you need a quick haircut, a transformative color session, or exquisite bridal makeup, our professional team is here to deliver.
+                    </p>
+                    <p class="text-brand-600 leading-relaxed mb-8 font-light">
+                        We pride ourselves on a welcoming atmosphere, high-quality products, and modern techniques. Appointments are highly recommended to ensure you get the dedicated time and attention you deserve.
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-brand-800">
+                            <i class="fas fa-check text-brand-500"></i> Expert professional makeup artists
+                        </li>
+                        <li class="flex items-center gap-3 text-brand-800">
+                            <i class="fas fa-check text-brand-500"></i> Premium skin care & hair treatments
+                        </li>
+                        <li class="flex items-center gap-3 text-brand-800">
+                            <i class="fas fa-check text-brand-500"></i> Comfortable, hygienic environment
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/919702761910" target="_blank" class="inline-flex items-center gap-2 bg-brand-900 text-white px-8 py-3 rounded-full font-medium hover:bg-brand-800 transition shadow-lg shadow-brand-900/20">
+                        Book Your Visit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-950 mb-4">Our Work Portfolio</h2>
+                <div class="w-20 h-1 bg-brand-900 mx-auto mb-6"></div>
+                <p class="text-brand-600 font-light">Take a look at some of the beautiful transformations and styles created by our talented team.</p>
+            </div>
+
+            <!-- CSS Masonry Layout -->
+            <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847675/WhatsApp_Image_2026-04-22_at_2.07.46_PM_1_rtgv85.jpg" class="w-full object-cover" alt="Gallery Image 1">
+                </div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847674/WhatsApp_Image_2026-04-22_at_2.07.47_PM_dswkdn.jpg" class="w-full object-cover" alt="Gallery Image 2">
+                </div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847674/WhatsApp_Image_2026-04-22_at_2.07.46_PM_qcvm2n.jpg" class="w-full object-cover" alt="Gallery Image 3">
+                </div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847675/WhatsApp_Image_2026-04-22_at_2.07.43_PM_1_hopxaf.jpg" class="w-full object-cover" alt="Gallery Image 4">
+                </div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847674/WhatsApp_Image_2026-04-22_at_2.07.43_PM_2_pmtzkr.jpg" class="w-full object-cover" alt="Gallery Image 5">
+                </div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847674/WhatsApp_Image_2026-04-22_at_2.07.42_PM_2_y6qfou.jpg" class="w-full object-cover" alt="Gallery Image 6">
+                </div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847676/WhatsApp_Image_2026-04-22_at_2.07.41_PM_f6ovwa.jpg" class="w-full object-cover" alt="Gallery Image 7">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/ojha_unisex_salon" target="_blank" class="inline-flex items-center gap-2 text-brand-900 font-medium hover:text-brand-600 transition">
+                    <i class="fab fa-instagram text-xl"></i> View more on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section id="reviews" class="py-20 bg-brand-950 text-white overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Client Reviews</h2>
+                <div class="w-20 h-1 bg-brand-500 mx-auto mb-2"></div>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative max-w-2xl mx-auto">
+                <div class="overflow-hidden rounded-2xl relative shadow-2xl">
+                    <div id="slider-track" class="flex transition-transform duration-1000 ease-in-out h-[400px] md:h-[500px]">
+                        
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847692/WhatsApp_Image_2026-04-22_at_2.07.38_PM_lwoe1h.jpg" alt="Review 1" class="w-full h-full object-cover opacity-50">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end p-8 text-center">
+                                <div class="text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-lg md:text-xl font-serif italic mb-4">"Absolutely amazing service! The staff is very professional and they knew exactly what haircut would suit my face."</p>
+                                <h4 class="font-bold tracking-wide uppercase text-sm">- Priya S.</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847692/WhatsApp_Image_2026-04-22_at_2.07.38_PM_1_kavne0.jpg" alt="Review 2" class="w-full h-full object-cover opacity-50">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end p-8 text-center">
+                                <div class="text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                <p class="text-lg md:text-xl font-serif italic mb-4">"Got my bridal makeup done here. It was flawless and stayed intact throughout the event. Highly recommend!"</p>
+                                <h4 class="font-bold tracking-wide uppercase text-sm">- Anjali M.</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847691/WhatsApp_Image_2026-04-22_at_2.07.39_PM_m72jg9.jpg" alt="Review 3" class="w-full h-full object-cover opacity-50">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end p-8 text-center">
+                                <div class="text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                                <p class="text-lg md:text-xl font-serif italic mb-4">"Very clean and hygienic place. Skin care treatments are very relaxing. Good value for money."</p>
+                                <h4 class="font-bold tracking-wide uppercase text-sm">- Rahul K.</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1776847691/WhatsApp_Image_2026-04-22_at_2.07.40_PM_n8uz2t.jpg" alt="Review 4" class="w-full h-full object-cover opacity-50">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end p-8 text-center">
+                                <div class="text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-lg md:text-xl font-serif italic mb-4">"The hair coloring service is top-notch. They listen to what you want and deliver perfectly. Thank you Haircraft!"</p>
+                                <h4 class="font-bold tracking-wide uppercase text-sm">- Sneha V.</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <div class="flex justify-center mt-6 gap-2" id="slider-dots">
+                    <button class="w-3 h-3 rounded-full bg-white opacity-100 transition-opacity" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity" data-index="2"></button>
+                    <button class="w-3 h-3 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity" data-index="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large CTA Section -->
+    <section class="py-16 bg-brand-100 border-b border-brand-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-serif font-bold text-brand-950 mb-6">Ready to Transform Your Look?</h2>
+            <p class="text-brand-700 mb-8 font-light">Appointments are recommended to guarantee your spot. Contact us via WhatsApp or Phone today.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/919702761910" target="_blank" class="inline-flex justify-center items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-8 py-4 rounded-full font-bold transition shadow-lg">
+                    <i class="fab fa-whatsapp text-xl"></i> Message on WhatsApp
+                </a>
+                <a href="tel:09702761910" class="inline-flex justify-center items-center gap-2 bg-brand-900 hover:bg-brand-800 text-white px-8 py-4 rounded-full font-bold transition shadow-lg">
+                    <i class="fas fa-phone-alt text-xl"></i> Call 09702761910
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info & Form -->
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-brand-950 mb-6">Visit Us</h2>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-brand-900"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-950">Location</h4>
+                                <p class="text-brand-600 text-sm leading-relaxed mt-1">Shop No. 1, Shop Bamanpuri, opp. Monginis Cake,<br>Akal Society, Kanti Nagar, J B Nagar,<br>Andheri East, Mumbai, Maharashtra 400059</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt text-brand-900"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-950">Contact</h4>
+                                <p class="text-brand-600 text-sm mt-1">09702761910</p>
+                                <p class="text-brand-600 text-sm mt-1">demo123@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-clock text-brand-900"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-950">Hours</h4>
+                                <p class="text-brand-600 text-sm mt-1">Monday - Sunday: 10:00 AM to 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form UI -->
+                    <div class="bg-brand-50 p-8 rounded-2xl border border-brand-100">
+                        <h3 class="text-xl font-bold font-serif text-brand-950 mb-4">Send us a message</h3>
+                        <form class="space-y-4" onsubmit="event.preventDefault();">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-700 mb-1">Name</label>
+                                <input type="text" class="w-full px-4 py-2 border border-brand-300 rounded-lg focus:ring-2 focus:ring-brand-900 focus:border-brand-900 outline-none transition" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-700 mb-1">Phone</label>
+                                <input type="tel" class="w-full px-4 py-2 border border-brand-300 rounded-lg focus:ring-2 focus:ring-brand-900 focus:border-brand-900 outline-none transition" placeholder="Your Number">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-700 mb-1">Message</label>
+                                <textarea rows="3" class="w-full px-4 py-2 border border-brand-300 rounded-lg focus:ring-2 focus:ring-brand-900 focus:border-brand-900 outline-none transition" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button class="w-full bg-brand-900 text-white font-medium py-3 rounded-lg hover:bg-brand-800 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Google Map Iframe -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-brand-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.95764095493!2d72.8715421!3d19.1118187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c83c27b0bba5%3A0x67bd29bb2db0f8f1!2sJ.%20B.%20Nagar%2C%20Andheri%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 text-white pt-16 pb-8 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-serif font-bold uppercase tracking-tight mb-4">Haircraft</h3>
+                    <p class="text-brand-400 text-sm mb-6 leading-relaxed max-w-sm">
+                        Premium unisex salon offering expert hair, skin, and bridal makeup services in Andheri East, Mumbai.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ojha_unisex_salon" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-500 hover:text-brand-950 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ojha_unisex_salon" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-500 hover:text-brand-950 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/919702761910" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#25D366] hover:text-white transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-brand-400 hover:text-white text-sm transition">Our Services</a></li>
+                        <li><a href="#about" class="text-brand-400 hover:text-white text-sm transition">About Us</a></li>
+                        <li><a href="#gallery" class="text-brand-400 hover:text-white text-sm transition">Gallery</a></li>
+                        <li><a href="#reviews" class="text-brand-400 hover:text-white text-sm transition">Client Reviews</a></li>
+                        <li><a href="#contact" class="text-brand-400 hover:text-white text-sm transition">Contact & Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Find Us</h4>
+                    <address class="not-italic text-brand-400 text-sm space-y-2">
+                        <p>Shop No. 1, Shop Bamanpuri</p>
+                        <p>Opp. Monginis Cake, Akal Society</p>
+                        <p>Kanti Nagar, J B Nagar</p>
+                        <p>Andheri East, Mumbai 400059</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-brand-500 text-xs">
+                    &copy; 2026 Haircraft Unisex Salon. All rights reserved.
+                </p>
+                <div class="text-brand-500 text-xs space-x-4">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Testimonial Auto-Slider Logic
+        const track = document.getElementById('slider-track');
+        const dots = document.querySelectorAll('#slider-dots button');
+        let currentSlide = 0;
+        const totalSlides = 4;
+        let slideInterval;
+
+        function updateSlider(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('opacity-40');
+                    dot.classList.add('opacity-100');
+                } else {
+                    dot.classList.add('opacity-40');
+                    dot.classList.remove('opacity-100');
+                }
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % totalSlides;
+            updateSlider(nextIndex);
+        }
+
+        // Start Auto Slide (every 4 seconds)
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        // Handle dot clicks
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval); // Reset timer on manual click
+                updateSlider(index);
+                startSlider(); // Restart timer
+            });
+        });
+
+        // Initialize
+        startSlider();
+    </script>
+</body>
+</html>
