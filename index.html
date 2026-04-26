@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +13,46 @@
 <meta property="og:title" content="Prisha Service & Solutions | Mumbai Digital Partner">
 <meta property="og:description" content="Professional website design & automation for Mumbai small businesses.">
 <meta property="og:url" content="https://prishaserviceandsolutions.in/">
-<meta property="og:image" content="https://prishaserviceandsolutions.in/logo.jpg">
-<link rel="icon" href="https://prishaserviceandsolutions.in/logo.jpg">
+<meta property="og:image" content="https://res.cloudinary.com/duq1f7pvq/image/upload/v1777229066/logo_nr4x9o.jpg">
+
+<link rel="icon" href="https://res.cloudinary.com/duq1f7pvq/image/upload/v1777229066/logo_nr4x9o.jpg" type="image/jpeg">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Prisha Service & Solutions","url":"https://prishaserviceandsolutions.in","telephone":"+919892415819","address":{"@type":"PostalAddress","streetAddress":"Samrat Ashok Nagar","addressLocality":"Mumbai","addressRegion":"MH","postalCode":"400099","addressCountry":"IN"},"founder":{"@type":"Person","name":"Vishal Mhaske"},"priceRange":"₹999 - ₹14,999"}
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Prisha Service & Solutions",
+  "url":"https://prishaserviceandsolutions.in",
+  "telephone":"+919892415819",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Samrat Ashok Nagar",
+    "addressLocality":"Mumbai",
+    "addressRegion":"MH",
+    "postalCode":"400099",
+    "addressCountry":"IN"
+  },
+  "founder":{
+    "@type":"Person",
+    "name":"Vishal Mhaske"
+  },
+  "priceRange":"₹999 - ₹14,999"
+}
 </script>
 
 <style>
-:root {
-  --p: #020617; --s: #0f172a; --a1: #6366f1; --a2: #a855f7; --a3: #22c55e;
-  --a4: #f59e0b; --a5: #ef4444; --a6: #06b6d4; --w: #fff; --l: #f8fafc;
-  --m: #64748b; --bd: rgba(255,255,255,0.08);
-  --g1: linear-gradient(135deg,#6366f1,#a855f7);
-  --g2: linear-gradient(135deg,#22c55e,#06b6d4);
-  --g3: linear-gradient(135deg,#f59e0b,#ef4444);
-  --sh: 0 20px 60px rgba(0,0,0,0.4);
-  --r: 20px; --rl: 32px;
+:root {  
+  --p: #020617; --s: #0f172a; --a1: #6366f1; --a2: #a855f7; --a3: #22c55e;  
+  --a4: #f59e0b; --a5: #ef4444; --a6: #06b6d4; --w: #fff; --l: #f8fafc;  
+  --m: #64748b; --bd: rgba(255,255,255,0.08);  
+  --g1: linear-gradient(135deg,#6366f1,#a855f7);  
+  --g2: linear-gradient(135deg,#22c55e,#06b6d4);  
+  --g3: linear-gradient(135deg,#f59e0b,#ef4444);  
+  --sh: 0 20px 60px rgba(0,0,0,0.4);  
+  --r: 20px; --rl: 32px;  
   --tr: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -103,7 +123,7 @@ input,textarea,select{font-family:inherit;}
 
 /* HEADER */
 header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.4s ease;}
-header.sc{background:rgba(2,6,23,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);box-shadow:0 8px 32px rgba(0,0,0,0.3);}
+header.sc{background:rgba(2,6,23,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);box-shadow:0 8px 32px rgba(0,0,0,0.3);}
 .nw{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;}
 .nl{display:flex;align-items:center;gap:12px;cursor:pointer;}
 .nl img{height:42px;width:42px;border-radius:10px;object-fit:cover;background:#1e1b4b;}
@@ -112,7 +132,8 @@ header.sc{background:rgba(2,6,23,0.92);backdrop-filter:blur(20px);border-bottom:
 .nls{display:flex;align-items:center;gap:2rem;}
 .nls a{color:rgba(255,255,255,0.7);font-size:0.88rem;font-weight:600;transition:0.3s;position:relative;padding-bottom:4px;}
 .nls a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--g1);transition:0.3s;border-radius:2px;}
-.nls a:hover{color:#fff;}.nls a:hover::after{width:100%;}
+.nls a:hover{color:#fff;}
+.nls a:hover::after{width:100%;}
 .ncta{padding:10px 22px;font-size:0.82rem;}
 .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
 .hbg span{display:block;width:24px;height:2px;background:#fff;transition:0.3s;border-radius:2px;}
@@ -121,7 +142,7 @@ header.sc{background:rgba(2,6,23,0.92);backdrop-filter:blur(20px);border-bottom:
 .hbg.op span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
 
 /* MOBILE NAV */
-.mnav{display:none;position:fixed;inset:0;z-index:999;background:rgba(2,6,23,0.97);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;opacity:0;transition:opacity 0.4s;}
+.mnav{display:none;position:fixed;inset:0;z-index:999;background:rgba(2,6,23,0.98);flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;opacity:0;transition:opacity 0.4s;}
 .mnav.op{display:flex;opacity:1;}
 .mnav a{font-size:1.5rem;font-weight:700;color:rgba(255,255,255,0.8);transition:0.3s;}
 .mnav a:hover{color:#fff;}
@@ -131,8 +152,8 @@ header.sc{background:rgba(2,6,23,0.92);backdrop-filter:blur(20px);border-bottom:
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:9rem 0 5rem;position:relative;overflow:hidden;}
 .hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.3);padding:8px 20px;border-radius:50px;font-size:0.8rem;font-weight:700;color:#a5b4fc;margin-bottom:2rem;animation:pulse 3s ease-in-out infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,0.4);}50%{box-shadow:0 0 0 8px rgba(99,102,241,0);}}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,8vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:1.8rem;letter-spacing:-1px;}
-.hsub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,0.55);max-width:620px;margin:0 auto 3rem;line-height:1.7;}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,8vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:1.8rem;letter-spacing:-1px;}
+.hsub{font-size:clamp(0.95rem,2vw,1.2rem);color:rgba(255,255,255,0.55);max-width:620px;margin:0 auto 3rem;line-height:1.7;}
 .hbtns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 .hstats{display:flex;justify-content:center;gap:3rem;margin-top:5rem;flex-wrap:wrap;}
 .stn{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
@@ -191,11 +212,8 @@ header.sc{background:rgba(2,6,23,0.92);backdrop-filter:blur(20px);border-bottom:
 .ti i{color:#a855f7;font-size:0.9rem;}
 
 /* GALLERY */
-.cout{position:relative;overflow:hidden;border-radius:var(--rl); margin: 0 -1.5rem; padding: 0 1.5rem;}
-.ctr{
-  display:flex; gap:1.5rem; transition:transform 0.5s cubic-bezier(0.165,0.84,0.44,1); 
-  padding:0.5rem 0; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory;
-}
+.cout{position:relative;overflow:hidden;border-radius:var(--rl); margin: 0; padding: 0;}
+.ctr{display:flex; gap:1.5rem; transition:transform 0.5s cubic-bezier(0.165,0.84,0.44,1); padding:0.5rem 0; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory;}
 .ctr::-webkit-scrollbar { display: none; }
 .cc{min-width:280px; width: 300px; background:rgba(255,255,255,0.04);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;transition:0.4s;flex-shrink:0; scroll-snap-align: start;}
 .cc:hover{border-color:rgba(99,102,241,0.4);}
@@ -316,24 +334,35 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
 .page{display:none;}
 .page.ac{display:block;}
 
-/* RESPONSIVE */
-@media(max-width:1024px){.fgrid{grid-template-columns:1fr 1fr;}}
+/* RESPONSIVE & MOBILE PERFORMANCE FIXES */
+@media(max-width:1024px){
+  .fgrid{grid-template-columns:1fr 1fr;}
+}
 @media(max-width:768px){
-  .nls{display:none;}.hbg{display:flex;}
+  /* Performance Fixes: Disable heavy CSS processing on mobile */
+  .orb { display: none !important; animation: none !important; }
+  header.sc, .mnav { backdrop-filter: none !important; background: #020617 !important; }
+  .fcards { display: none !important; } 
+
+  /* Layout Fixes */
+  .nls{display:none;}
+  .hbg{display:flex;}
   .abgrid{grid-template-columns:1fr;}
   .fgrid{grid-template-columns:1fr 1fr;gap:2.5rem;}
-  .fc{display:none;}
   .pcard.pop{transform:none;}
   .modal{padding:2rem 1.5rem;}
   .ctacard{padding:3.5rem 1.5rem;}
   .hstats{gap:2rem;}
+  .cc { width: 85vw; max-width: 300px; } /* Fixes gallery overflow */
 }
-@media(max-width:500px){.fgrid{grid-template-columns:1fr;}.fbot{flex-direction:column;text-align:center;}}
+@media(max-width:500px){
+  .fgrid{grid-template-columns:1fr;}
+  .fbot{flex-direction:column;text-align:center;}
+}
 </style>
 </head>
 <body>
 
-<!-- BG -->
 <div class="bg-wrap">
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="orb o3"></div><div class="orb o4"></div>
@@ -341,14 +370,12 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
 <div class="grid-bg"></div>
 <div id="sp"></div>
 
-<!-- LOADER -->
 <div id="loader">
   <div class="ld-text">PRISHA <span>S&S</span></div>
   <div class="ld-ring"></div>
   <div class="ld-dots"><span></span><span></span><span></span></div>
 </div>
 
-<!-- MOBILE NAV -->
 <div class="mnav" id="mnav">
   <button class="mcl" onclick="closeMN()">&times;</button>
   <a href="#" onclick="goSec('hero');closeMN()">Home</a>
@@ -361,11 +388,10 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   <button class="btn bg1" onclick="openModal();closeMN()">Get Started</button>
 </div>
 
-<!-- HEADER -->
 <header id="hdr">
   <div class="con nw">
     <div class="nl" onclick="goPage('home')">
-      <img src="https://prishaserviceandsolutions.in/logo.jpg" alt="Prisha Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFlMWI0YiIvPjwvc3ZnPg=='" width="42" height="42">
+      <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1777229066/logo_nr4x9o.jpg" alt="Prisha Logo" width="42" height="42">
       <div class="nlt">PRISHA<small>SERVICE & SOLUTIONS</small></div>
     </div>
     <nav class="nls">
@@ -383,10 +409,8 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </header>
 
-<!-- HOME PAGE -->
 <div id="home-page" class="page ac">
 
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="fcards">
     <div class="fc fc1"><i class="fas fa-globe"></i> Website Live ✓</div>
@@ -395,7 +419,7 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
     <div class="fc fc4"><i class="fas fa-qrcode"></i> Smart QR Systems</div>
   </div>
   <div class="con">
-    <div class="hbadge rv"><i class="fas fa-shield-halved"></i> MSME Registered • Mumbai • Est. 2022</div>
+    <div class="hbadge rv"><i class="fas fa-shield-halved"></i> MSME Registered • Mumbai • Est. 2026</div>
     <h1 class="rv d1">Mumbai's #1<br><span class="tg1">Digital Growth</span><br>Partner</h1>
     <p class="hsub rv d2">We build powerful websites, automate your business with Google tools & put your shop on top of Google Search — all at affordable Mumbai prices.</p>
     <div class="hbtns rv d3">
@@ -412,7 +436,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   <div class="hsc"><span>SCROLL</span><i class="fas fa-chevron-down"></i></div>
 </section>
 
-<!-- MARQUEE -->
 <div class="mq">
   <div class="mqt" id="mqt">
     <div class="mqi"><i class="fas fa-globe"></i>Website Design</div>
@@ -438,7 +461,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="sec" id="services">
   <div class="con">
     <div class="tc rv">
@@ -518,7 +540,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-<!-- TOOLS -->
 <section class="sec" id="tools" style="padding-top:0">
   <div class="con">
     <div class="tc rv">
@@ -551,7 +572,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="sec" id="gallery" style="padding-top:0">
   <div class="con">
     <div class="tc rv">
@@ -561,13 +581,13 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
     </div>
     <div class="cout rv">
       <div class="ctr" id="ctr">
-        <div class="cc"><img src="https://truthwear.in/Certificate%20Generator.png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q2VydGlmaWNhdGUgR2VuZXJhdG9yPC90ZXh0Pjwvc3ZnPg=='" alt="Certificate Generator" loading="lazy"><div class="ccb"><h3>Auto Certificate Generator</h3><p>Form → Docs → Auto PDF certificates.</p></div></div>
-        <div class="cc"><img src="https://truthwear.in/Digital%20Complaint%20System.png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q29tcGxhaW50IFN5c3RlbTwvdGV4dD48L3N2Zz4='" alt="Complaint System" loading="lazy"><div class="ccb"><h3>Digital Complaint System</h3><p>Form + Sheet + email alerts.</p></div></div>
-        <div class="cc"><img src="https://truthwear.in/Donation%20or%20Payment%20Tracker.png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+RG9uYXRpb24gVHJhY2tlcjwvdGV4dD48L3N2Zz4='" alt="Donation Tracker" loading="lazy"><div class="ccb"><h3>Donation / Payment Tracker</h3><p>Screenshot upload + auto records.</p></div></div>
-        <div class="cc"><img src="https://truthwear.in/Inventory%20System%20(Shop%20stock).png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+SW52ZW50b3J5IFN5c3RlbTwvdGV4dD48L3N2Zz4='" alt="Inventory" loading="lazy"><div class="ccb"><h3>Shop Inventory System</h3><p>Stock entry via Form + Sheets.</p></div></div>
-        <div class="cc"><img src="https://truthwear.in/Online%20Appointment%20Booking.png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+QXBwb2ludG1lbnQgQm9va2luZzwvdGV4dD48L3N2Zz4='" alt="Appointment" loading="lazy"><div class="ccb"><h3>Appointment Booking</h3><p>Form + Google Calendar automation.</p></div></div>
-        <div class="cc"><img src="https://truthwear.in/QR%20Photo%20Album.png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UVIgUGhvdG8gQWxidW08L3RleHQ+PC9zdmc+'" alt="QR Album" loading="lazy"><div class="ccb"><h3>QR Photo Album</h3><p>Drive + Sites event photo album.</p></div></div>
-        <div class="cc"><img src="https://truthwear.in/Staff%20Check-in%20%20Check-out%20System.png" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+QXR0ZW5kYW5jZSBTeXN0ZW08L3RleHQ+PC9zdmc+'" alt="Attendance" loading="lazy"><div class="ccb"><h3>Staff Attendance System</h3><p>QR check-in/out with auto reports.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/Certificate%20Generator.png" loading="lazy"><div class="ccb"><h3>Auto Certificate Generator</h3><p>Form → Docs → Auto PDF certificates.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/Digital%20Complaint%20System.png" loading="lazy"><div class="ccb"><h3>Digital Complaint System</h3><p>Form + Sheet + email alerts.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/Donation%20or%20Payment%20Tracker.png" loading="lazy"><div class="ccb"><h3>Donation / Payment Tracker</h3><p>Screenshot upload + auto records.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/Inventory%20System%20(Shop%20stock).png" loading="lazy"><div class="ccb"><h3>Shop Inventory System</h3><p>Stock entry via Form + Sheets.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/Online%20Appointment%20Booking.png" loading="lazy"><div class="ccb"><h3>Appointment Booking</h3><p>Form + Google Calendar automation.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/QR%20Photo%20Album.png" loading="lazy"><div class="ccb"><h3>QR Photo Album</h3><p>Drive + Sites event photo album.</p></div></div>
+        <div class="cc"><img src="https://truthwear.in/Staff%20Check-in%20%20Check-out%20System.png" loading="lazy"><div class="ccb"><h3>Staff Attendance System</h3><p>QR check-in/out with auto reports.</p></div></div>
       </div>
     </div>
     <div class="cnav">
@@ -577,7 +597,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="sec" id="pricing" style="padding-top:0">
   <div class="con">
     <div class="tc rv">
@@ -632,14 +651,13 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="sec" id="about" style="padding-top:0">
   <div class="con">
     <div class="abgrid">
       <div class="rvl">
         <div class="abimg">
           <div class="abglow"></div>
-          <img src="https://prishaserviceandsolutions.in/vishal.jpg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxYjRiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2MzY2ZjEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+VmlzaGFsIE1oYXNrZTwvdGV4dD48L3N2Zz4='" alt="Vishal Mhaske Founder" loading="lazy">
+          <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1777229037/vishal_fbmjm0.webp" alt="Vishal Mhaske Founder" loading="lazy">
           <div class="fbd">VISHAL MHASKE<br><small style="font-weight:500">Founder & CEO</small></div>
         </div>
       </div>
@@ -649,7 +667,7 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
         <p><strong style="color:#fff">Prisha Service & Solutions</strong> was founded by <strong style="color:#6366f1">Vishal Mhaske</strong> with one goal: to empower Mumbai's hardworking small business owners with professional digital tools previously available only to big companies.</p>
         <p>We are a Govt. Registered MSME based in Mumbai. Every project is personally handled with integrity and technical excellence.</p>
         <div class="msme">
-          <img src="https://prishaserviceandsolutions.in/msme.jpg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzIyYzU1ZSIvPjwvc3ZnPg=='" alt="MSME" loading="lazy">
+          <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1777229201/msme_igzpu4.png" alt="MSME" loading="lazy">
           <div><strong>✅ MSME Registered</strong><p>UDYAM-MH-18-0497703</p></div>
         </div>
         <div class="skills">
@@ -662,7 +680,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="sec" id="testimonials" style="padding-top:0">
   <div class="con">
     <div class="tc rv">
@@ -677,7 +694,6 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-<!-- CTA -->
 <section class="sec" style="padding-top:0;padding-bottom:6rem">
   <div class="con">
     <div class="ctacard rv">
@@ -691,10 +707,7 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </section>
 
-</div><!-- end home-page -->
-
-<!-- TERMS PAGE -->
-<div id="terms-page" class="page">
+</div><div id="terms-page" class="page">
   <section style="padding:8rem 0 5rem">
     <div class="con">
       <div class="tc" style="margin-bottom:3rem">
@@ -717,13 +730,12 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </section>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="con">
     <div class="fgrid">
       <div class="fb">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:1.5rem">
-          <img src="https://prishaserviceandsolutions.in/logo.jpg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFlMWI0YiIvPjwvc3ZnPg=='" alt="Logo" style="height:42px;width:42px;object-fit:cover;border-radius:10px">
+          <img src="https://res.cloudinary.com/duq1f7pvq/image/upload/v1777229066/logo_nr4x9o.jpg" alt="Logo" style="height:42px;width:42px;object-fit:cover;border-radius:10px">
           <div class="nlt">PRISHA<small>SERVICE & SOLUTIONS</small></div>
         </div>
         <p>High-power digital infrastructure & automation for Mumbai's rising business community. MSME Registered & trusted by 150+ local shops.</p>
@@ -772,16 +784,13 @@ footer{padding:5rem 0 2rem;border-top:1px solid var(--bd);}
   </div>
 </footer>
 
-<!-- FLOATING BUTTONS -->
 <div class="fzone">
   <a href="https://wa.me/918779266408" target="_blank" rel="noopener" class="fbtn fwa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.instagram.com/vishalmhaske__" target="_blank" rel="noopener" class="fbtn fig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 </div>
 
-<!-- TOAST -->
 <div id="toast"><i class="fas fa-info-circle"></i> &nbsp;<span id="toastMsg">Notification</span></div>
 
-<!-- MODAL -->
 <div class="ovl" id="ovl" onclick="ovlClick(event)">
   <div class="modal" id="modal">
     <div class="mcl2" onclick="closeModal()"><i class="fas fa-times"></i></div>
@@ -964,7 +973,7 @@ function filterS(cat, btn) {
 }
 
 // =============================================
-// CAROUSEL (Improved Scroll-Snap logic)
+// CAROUSEL
 // =============================================
 function moveC(dir) {
   const track = document.getElementById('ctr');
@@ -973,6 +982,5 @@ function moveC(dir) {
   track.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
 }
 </script>
-
 </body>
 </html>
