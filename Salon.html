@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Be U Beauty Care - Premium Salon, Coaching Classes & Beauty Products in Mumbai by Mamta">
+<title>Be U Beauty Care | Salon · Classes · Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --gold:#C9A84C;--gold-light:#F0D080;--gold-dark:#8B6914;
+  --rose:#E8A0A8;--rose-deep:#C45C6A;--rose-pale:#FDF0F2;
+  --cream:#FFF8F0;--cream-dark:#F5EDD8;
+  --dark:#1A0A12;--dark2:#2D1520;--dark3:#3E2030;
+  --text:#2A1218;--text2:#6B4A55;--text3:#9E7A86;
+  --white:#FFFFFF;--offwhite:#FEFCFA;
+  --success:#2E7D32;--danger:#C62828;--info:#1565C0;
+  --shadow:0 4px 24px rgba(26,10,18,0.10);
+  --shadow-hover:0 8px 40px rgba(201,168,76,0.18);
+  --border-r:12px;--border-r-lg:20px;
+  --transition:all 0.3s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+h1,h2,h3,.logo-text{font-family:'Playfair Display',serif}
+img{max-width:100%;height:auto}
+input,textarea,select{font-family:inherit}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--cream-dark)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* NAV */
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,10,18,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);transition:var(--transition);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--rose-deep));display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--white);font-family:'Playfair Display',serif;font-weight:700;}
+.logo-text{color:var(--gold);font-size:18px;font-weight:600;line-height:1.2}
+.logo-sub{color:var(--rose);font-size:11px;font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;transition:var(--transition);position:relative;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(201,168,76,0.10)}
+.nav-links a.btn-nav{background:var(--gold);color:var(--dark);font-weight:600;padding:8px 18px;border-radius:8px;}
+.nav-links a.btn-nav:hover{background:var(--gold-light);transform:translateY(-1px)}
+.cart-btn{background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.85);padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;position:relative;transition:var(--transition);}
+.cart-btn:hover{color:var(--gold);background:rgba(201,168,76,0.10)}
+.cart-badge{background:var(--rose-deep);color:var(--white);border-radius:50%;width:18px;height:18px;font-size:11px;display:inline-flex;align-items:center;justify-content:center;margin-left:4px;font-weight:700;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px;transition:var(--transition)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:rgba(26,10,18,0.98);padding:80px 24px 24px;flex-direction:column;gap:8px;}
+.mobile-menu a{color:var(--white);text-decoration:none;font-size:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);display:block}
+.mobile-menu.open{display:flex}
+
+/* HERO */
+#home{min-height:100vh;background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 50%,#3A1828 100%);position:relative;overflow:hidden;display:flex;align-items:center;padding-top:72px;}
+.hero-bg-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),radial-gradient(circle at 80% 20%, rgba(232,160,168,0.08) 0%, transparent 50%);}
+.hero-inner{max-width:1200px;margin:0 auto;padding:60px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);padding:6px 16px;border-radius:30px;font-size:13px;margin-bottom:20px;}
+.hero-title{font-size:clamp(2.2rem,5vw,3.8rem);color:var(--white);line-height:1.15;margin-bottom:16px;}
+.hero-title span{color:var(--gold)}
+.hero-desc{color:rgba(255,255,255,0.65);font-size:17px;line-height:1.8;margin-bottom:32px;}
+.hero-info{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
+.hero-info-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);font-size:14px}
+.hero-info-item i{color:var(--gold);font-size:14px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-gold{background:var(--gold);color:var(--dark);padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:var(--transition);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.35)}
+.btn-outline{background:transparent;color:var(--white);padding:14px 28px;border-radius:10px;font-weight:500;font-size:15px;border:1px solid rgba(255,255,255,0.3);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:var(--transition);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.06)}
+.hero-image-area{position:relative;}
+.hero-img-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px;}
+.hero-img-card{border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--dark3),var(--dark2));aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid rgba(201,168,76,0.15);}
+.hero-img-card:first-child{grid-column:span 2;aspect-ratio:16/9;}
+.hero-img-card img{width:100%;height:100%;object-fit:cover;}
+.hero-img-card .img-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,10,18,0.8));color:var(--white);padding:16px;font-size:13px;font-weight:500;}
+
+/* TICKER */
+.services-strip{background:var(--gold);padding:16px 0;overflow:hidden;}
+.services-ticker{display:flex;gap:0;white-space:nowrap;animation:ticker 30s linear infinite;}
+.services-ticker span{color:var(--dark);font-size:14px;font-weight:600;padding:0 24px;letter-spacing:0.5px;}
+.services-ticker span::after{content:"•";margin-left:24px;opacity:0.5}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:80px 24px;max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header .eyebrow{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:block;}
+.section-header h2{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);margin-bottom:14px}
+.section-header p{color:var(--text2);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7}
+.divider{width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--rose-deep));border-radius:2px;margin:16px auto 0}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.service-card{background:var(--white);border-radius:var(--border-r-lg);padding:28px 20px;text-align:center;border:1px solid rgba(201,168,76,0.12);transition:var(--transition);position:relative;overflow:hidden;}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.service-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--rose-pale),var(--cream-dark));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;transition:var(--transition);}
+.service-card:hover .service-icon{background:linear-gradient(135deg,var(--gold-light),var(--gold));transform:scale(1.05)}
+.service-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.service-card p{font-size:13px;color:var(--text3);line-height:1.5}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.review-card{background:var(--white);padding:24px;border-radius:var(--border-r-lg);border:1px solid rgba(201,168,76,0.12);box-shadow:var(--shadow);}
+.review-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.reviewer-initial{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:18px;background:var(--gold);}
+.review-stars{color:#f5b50a;font-size:14px;margin-bottom:12px;}
+.review-text{font-size:14px;color:var(--text2);line-height:1.6;}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;}
+.gallery-item{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--cream-dark);}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:var(--transition);}
+.gallery-item:hover img{transform:scale(1.08);}
+
+/* CLASSES PAGE */
+#classes-page{display:none;min-height:100vh;padding-top:72px}
+.page-hero{background:linear-gradient(135deg,var(--dark),var(--dark2));padding:60px 24px;text-align:center;}
+.page-hero h1{color:var(--gold);font-size:clamp(2rem,5vw,3.2rem);margin-bottom:12px}
+.page-hero p{color:rgba(255,255,255,0.7);font-size:16px}
+.classes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:60px 24px;max-width:1200px;margin:0 auto}
+.class-card{background:var(--white);border-radius:var(--border-r-lg);overflow:hidden;border:1px solid rgba(201,168,76,0.15);transition:var(--transition);}
+.class-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.class-img{height:200px;background:var(--dark2);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;}
+.class-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--dark);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;}
+.class-body{padding:24px}
+.class-body h3{font-size:18px;color:var(--text);margin-bottom:8px}
+.class-body p{font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:16px}
+.class-price{font-size:22px;font-weight:700;color:var(--gold);font-family:'Playfair Display',serif}
+
+/* SHOP */
+#shop-page{display:none;min-height:100vh;padding-top:72px}
+.shop-layout{display:grid;grid-template-columns:240px 1fr;gap:0;max-width:1200px;margin:0 auto;padding:40px 24px}
+.shop-sidebar{padding-right:24px;position:sticky;top:88px;height:fit-content}
+.sidebar-section{margin-bottom:28px}
+.sidebar-section h3{font-size:13px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.filter-btn{display:block;width:100%;text-align:left;padding:9px 12px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:14px;color:var(--text2);transition:var(--transition);font-family:inherit;}
+.filter-btn:hover,.filter-btn.active{background:rgba(201,168,76,0.10);color:var(--gold)}
+.filter-btn.active{font-weight:600}
+.products-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.product-card{background:var(--white);border-radius:var(--border-r-lg);overflow:hidden;border:1px solid rgba(201,168,76,0.12);transition:var(--transition);position:relative;}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.product-img{height:200px;background:var(--rose-pale);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:64px;}
+.product-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.product-badge{position:absolute;top:10px;left:10px;background:var(--rose-deep);color:var(--white);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;}
+.product-body{padding:16px}
+.product-category{font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.product-body h3{font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.3}
+.product-price{font-size:18px;font-weight:700;color:var(--text);font-family:'Playfair Display',serif}
+.btn-add-cart{background:var(--gold);color:var(--dark);border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);}
+.btn-add-cart:hover{background:var(--gold-light);transform:scale(1.04)}
+.btn-add-cart.added{background:var(--success);color:white;}
+
+/* CHECKOUT PAGE */
+#checkout-page{display:none;min-height:100vh;padding-top:88px;background:var(--cream);}
+.checkout-wrap{max-width:960px;margin:0 auto;padding:40px 24px;}
+.checkout-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;}
+.checkout-form-section{background:var(--white);border-radius:var(--border-r-lg);padding:32px;}
+.checkout-summary{background:var(--white);border-radius:var(--border-r-lg);padding:24px;position:sticky;top:100px;height:fit-content;}
+.summary-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--cream-dark);}
+.summary-item-img{width:52px;height:52px;border-radius:8px;object-fit:cover;background:var(--cream-dark);}
+.summary-item-info{flex:1;}
+.summary-item-info strong{font-size:14px;display:block;}
+.summary-item-info span{font-size:12px;color:var(--text3);}
+.summary-total{display:flex;justify-content:space-between;align-items:center;padding:16px 0 0;font-size:18px;font-weight:700;font-family:'Playfair Display',serif;}
+.empty-cart-msg{text-align:center;padding:60px 24px;color:var(--text3);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(26,10,18,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px;}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:var(--border-r-lg);width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:32px;position:relative;}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--cream-dark);border-radius:8px;font-size:14px;font-family:inherit;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{width:100%;padding:14px;background:var(--gold);color:var(--dark);border:none;border-radius:10px;font-weight:700;font-size:16px;cursor:pointer;transition:var(--transition);}
+.btn-submit:hover{background:var(--gold-light);}
+
+/* QR MODAL */
+.qr-modal-inner{text-align:center;}
+.qr-img-wrap{background:var(--cream-dark);border-radius:16px;padding:20px;display:inline-block;margin:16px auto;}
+.qr-img-wrap img{width:200px;height:200px;border-radius:8px;}
+.qr-amount{font-size:28px;font-weight:700;color:var(--gold);font-family:'Playfair Display',serif;margin:12px 0;}
+.btn-paid{background:var(--success);color:white;border:none;padding:14px 36px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px;transition:var(--transition);}
+.btn-paid:hover{background:#1B5E20;}
+
+/* SUCCESS POPUP */
+#success-popup{display:none;position:fixed;inset:0;z-index:3000;background:rgba(26,10,18,0.8);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;}
+#success-popup.open{display:flex;}
+.success-box{background:var(--white);border-radius:var(--border-r-lg);padding:40px 32px;text-align:center;max-width:420px;width:100%;}
+.success-icon{font-size:60px;margin-bottom:16px;}
+.success-box h2{color:var(--success);margin-bottom:12px;font-size:24px;}
+.success-box p{color:var(--text2);line-height:1.7;margin-bottom:20px;}
+
+/* ADMIN */
+#admin-panel{display:none;min-height:100vh;background:var(--cream);}
+.admin-nav{position:sticky;top:0;z-index:100;background:var(--dark);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.admin-nav-links button{background:none;border:none;color:rgba(255,255,255,0.7);padding:8px 14px;cursor:pointer;font-size:13px;font-family:inherit;}
+.admin-nav-links button.active{background:rgba(201,168,76,0.15);color:var(--gold)}
+.admin-content{padding:28px 24px;max-width:1300px;margin:0 auto}
+.admin-section{display:none}
+.admin-section.active{display:block}
+.admin-table-wrap{background:var(--white);border-radius:var(--border-r);overflow:hidden}
+.admin-table{width:100%;border-collapse:collapse;font-size:14px}
+.admin-table th{background:var(--cream-dark);padding:12px 16px;text-align:left;}
+.admin-table td{padding:14px 16px;border-bottom:1px solid var(--cream);}
+.admin-thumb img{width:48px;height:48px;object-fit:cover;border-radius:8px;}
+.admin-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+.admin-gallery-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--cream-dark);}
+.admin-gallery-card img{width:100%;height:100%;object-fit:cover;}
+.admin-gallery-card .gallery-actions{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:10px 8px;display:flex;gap:6px;justify-content:flex-end;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-main-img{border-radius:20px;background:linear-gradient(135deg,var(--dark2),var(--dark3));height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.about-main-img img{width:100%;height:100%;object-fit:cover;}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+
+/* FOOTER */
+footer{background:var(--dark);padding:60px 24px 32px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto;margin-bottom:40px}
+.footer-links h4{color:var(--gold);font-size:13px;margin-bottom:16px}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:14px;}
+.footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;}
+
+/* FLOATING */
+.whatsapp-float{position:fixed;bottom:24px;left:24px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;color:var(--white);display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .shop-layout{grid-template-columns:1fr}
+  .checkout-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .admin-nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== MAIN NAV ===== -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="logo-wrap" href="#" onclick="showPage('home')">
+      <div class="logo-icon">B</div>
+      <div>
+        <div class="logo-text">Be U Beauty Care</div>
+        <div class="logo-sub">Salon · Classes · Shop</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#" onclick="showPage('home');scrollToSection('home-section')" class="active" id="nav-home">Home</a>
+      <a href="#" onclick="showPage('home');scrollToSection('services-section')" id="nav-services">Services</a>
+      <a href="#" onclick="showPage('home');scrollToSection('gallery-section')" id="nav-gallery">Gallery</a>
+      <a href="#" onclick="showPage('classes')" id="nav-classes">Classes</a>
+      <a href="#" onclick="showPage('shop')" id="nav-shop">Shop</a>
+      <a href="#" onclick="showPage('home');scrollToSection('about-section')" id="nav-about">About</a>
+      <button class="cart-btn" onclick="showPage('checkout')"><i class="fa fa-shopping-cart"></i> Cart <span class="cart-badge" id="cart-count">0</span></button>
+      <a href="#" onclick="showAdminLogin()" class="btn-nav"><i class="fa fa-lock"></i> Admin</a>
+    </div>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="closeMobileMenu();showPage('home')">🏠 Home</a>
+  <a href="#" onclick="closeMobileMenu();showPage('home');scrollToSection('services-section')">✂️ Services</a>
+  <a href="#" onclick="closeMobileMenu();showPage('classes')">📚 Classes</a>
+  <a href="#" onclick="closeMobileMenu();showPage('shop')">🛍️ Shop</a>
+  <a href="#" onclick="closeMobileMenu();showPage('checkout')">🛒 Cart (<span id="mobile-cart-count">0</span>)</a>
+  <a href="#" onclick="closeMobileMenu();showPage('home');scrollToSection('about-section')">ℹ️ About</a>
+  <a href="#" onclick="closeMobileMenu();showAdminLogin()">🔒 Admin</a>
+</div>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="home-page" class="page">
+  <section id="home-section" style="padding-top:0">
+    <div id="home">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge"><i class="fa fa-star" style="color:var(--gold)"></i> Rated 4.6 by 126+ Happy Clients</div>
+          <h1 class="hero-title">Your Beauty,<br>Your <span>Confidence</span></h1>
+          <p class="hero-desc">Premium salon services, professional beauty coaching classes, and curated skincare & haircare products — all under one roof in Mumbai, operated by Mamta.</p>
+          <div class="hero-info">
+            <div class="hero-info-item"><i class="fa fa-clock"></i> 8AM – 8PM Daily</div>
+            <div class="hero-info-item"><i class="fa fa-map-marker-alt"></i> Sewri, Mumbai</div>
+            <div class="hero-info-item"><i class="fa fa-phone"></i> 8433539825</div>
+          </div>
+          <div class="hero-btns">
+            <a href="#" class="btn-gold" onclick="showPage('shop')"><i class="fa fa-shopping-bag"></i> Shop Products</a>
+            <a href="#" class="btn-outline" onclick="showPage('classes')"><i class="fa fa-graduation-cap"></i> View Classes</a>
+          </div>
+        </div>
+        <div class="hero-image-area">
+          <div class="hero-img-grid">
+            <div class="hero-img-card">
+              <img src="https://houseofdearhairsalon.com/wp-content/uploads/2022/04/5-Salon-Hair-Treatments-to-Fix-Your-Hair-From-Root-to-Tip.jpg" alt="Salon Service">
+              <div class="img-label">Premium Salon Experience</div>
+              <div style="position:absolute;top:10px;right:10px;background:#C9A84C;border-radius:8px;padding:4px 8px;font-weight:bold;">⭐ 4.6</div>
+            </div>
+            <div class="hero-img-card"><img src="https://theluxesalon.ca/wp-content/uploads/2026/01/Best-Salon-Luxe-Hair-1.jpg" alt="Makeup"></div>
+            <div class="hero-img-card"><img src="https://franckprovost.in/wp-content/uploads/2026/02/image-2.jpeg" alt="Bridal"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="services-strip">
+    <div class="services-ticker" id="ticker-wrap"></div>
+  </div>
+
+  <div id="services-section" style="background:var(--white);padding:80px 0">
+    <div class="section">
+      <div class="section-header">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Our Beauty Services</h2>
+        <p>Comprehensive beauty treatments delivered by founder Mamta and skilled professionals in a luxurious environment.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </div>
+
+  <div id="gallery-section" style="padding:80px 0;background:var(--cream);">
+    <div class="section">
+      <div class="section-header">
+        <span class="eyebrow">Our Work</span>
+        <h2>Photo Gallery</h2>
+        <p>A glimpse of our professional makeup, hair styling, and salon atmosphere.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="gallery-grid" id="public-gallery-grid"></div>
+    </div>
+  </div>
+
+  <div id="reviews-section" style="background:var(--white);padding:80px 0">
+    <div class="section">
+      <div class="section-header">
+        <span class="eyebrow">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+        <p>Read honest reviews from our wonderful customers.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header"><div class="reviewer-initial" style="background:#E67E22;">S</div><div><strong style="display:block;">Shikha</strong><span style="font-size:12px;color:var(--text3)">5 reviews</span></div></div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Mamta is superb. She is efficient, works very hard to give excellent service. Hygienic, punctual and very good services."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header"><div class="reviewer-initial" style="background:#1F618D;">U</div><div><strong style="display:block;">Uma Shethia</strong><span style="font-size:12px;color:var(--text3)">4 reviews</span></div></div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Mamta is superb. Punctual, excellent at her work and very hardworking."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header"><div class="reviewer-initial" style="background:#95A5A6;">R</div><div><strong style="display:block;">Radhika Sant</strong><span style="font-size:12px;color:var(--text3)">3 reviews</span></div></div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I got a haircut and saree draping done from Mamta. She is professional and punctual. I got a lot of compliments for my haircut."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header"><div class="reviewer-initial" style="background:#E84C3D;">K</div><div><strong style="display:block;">Kinjal Rambhia</strong><span style="font-size:12px;color:var(--text3)">1 review</span></div></div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Mamta is extremely punctual and professional. She is a dynamic beautician with varied skill set and deep experience. Very satisfied with the output."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about-section" style="padding:80px 0;background:var(--cream);">
+    <div class="section">
+      <div class="about-grid">
+        <div class="about-img-area" style="position:relative;">
+          <div class="about-main-img"><img src="https://toniandguyindia.com/wp-content/uploads/2024/11/T2-1-min.webp" alt="Salon Interior"></div>
+          <div style="position:absolute;bottom:-20px;right:-20px;background:var(--gold);border-radius:14px;padding:18px 22px;box-shadow:0 8px 32px rgba(201,168,76,0.3);">
+            <div style="font-size:28px;font-weight:700;color:var(--dark);font-family:'Playfair Display',serif;">126+</div>
+            <div style="font-size:12px;color:rgba(26,10,18,0.7);">Happy Clients</div>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="eyebrow" style="color:var(--gold);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:12px">Owned & Operated By Mamta</span>
+          <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:16px;">Be U Beauty Care</h2>
+          <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:20px;">Located in the heart of Sewri, Mumbai, Be U Beauty Care is your trusted destination for complete beauty & wellness. Founder <strong>Mamta</strong> brings years of professional experience, ensuring hygienic, punctual, and excellent services.</p>
+          <ul class="contact-list">
+            <li style="display:flex;gap:10px;align-items:flex-start;"><i class="fa fa-map-marker-alt" style="color:var(--gold);margin-top:3px;"></i> Sahayog Co-op Soc, Ram Laxman Tekadi, A101, Sindhu Nagar, Sewri, Mumbai 400015</li>
+            <li style="display:flex;gap:10px;align-items:center;"><i class="fa fa-clock" style="color:var(--gold)"></i> Open Daily: 8:00 AM – 8:00 PM</li>
+            <li style="display:flex;gap:10px;align-items:center;"><i class="fa fa-phone" style="color:var(--gold)"></i> +91 84335 39825</li>
+          </ul>
+          <div style="margin-top:24px;">
+            <h4 style="margin-bottom:8px;">Find us on Map</h4>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--cream-dark);margin-bottom:12px;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.645731362635!2d72.8497672!3d18.9912803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce64cc12b185%3A0xc62260cda6c0f8fa!2sSindhu%20Nagar%2C%20Sewri%2C%20Mumbai%2C%20Maharashtra%20400015!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/6FYvBX36gesk1pPA9" target="_blank" class="btn-gold" style="font-size:14px;padding:10px 16px;"><i class="fa fa-location-arrow"></i> Open Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h2 style="color:var(--gold);margin-bottom:10px;">Be U Beauty Care</h2>
+        <p style="color:rgba(255,255,255,0.5);font-size:14px;max-width:300px;">Your complete beauty destination in Mumbai. Managed by Mamta. Salon, coaching, and premium products all in one place.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#" onclick="showPage('home')">Home</a><br><br>
+        <a href="#" onclick="showPage('classes')">Classes</a><br><br>
+        <a href="#" onclick="showPage('shop')">Shop</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="tel:+918433539825">+91 84335 39825</a><br><br>
+        <a href="https://wa.me/918433539825">WhatsApp Us</a><br><br>
+        <a href="https://maps.app.goo.gl/6FYvBX36gesk1pPA9" target="_blank">View on Map</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:rgba(255,255,255,0.35);font-size:13px;">© 2024 Be U Beauty Care by Mamta. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== CLASSES PAGE ===== -->
+<div id="classes-page" class="page" style="display:none">
+  <div class="page-hero">
+    <span style="color:var(--gold);font-size:13px;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:12px">Professional Training</span>
+    <h1>Beauty Coaching Classes</h1>
+    <p>Learn from Mamta and industry experts. Start your beauty career journey.</p>
+  </div>
+  <div class="classes-grid" id="classes-grid"></div>
+</div>
+
+<!-- ===== SHOP PAGE ===== -->
+<div id="shop-page" class="page" style="display:none">
+  <div class="page-hero">
+    <span style="color:var(--gold);font-size:13px;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:12px">Beauty Store</span>
+    <h1>Shop Our Products</h1>
+    <p>Premium skincare, haircare, and beauty products curated by experts</p>
+  </div>
+  <div class="shop-layout">
+    <div class="shop-sidebar">
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <button class="filter-btn active" onclick="filterProducts('All',this)">All Products</button>
+        <button class="filter-btn" onclick="filterProducts('Skincare',this)">Skincare</button>
+        <button class="filter-btn" onclick="filterProducts('Haircare',this)">Haircare</button>
+        <button class="filter-btn" onclick="filterProducts('Makeup',this)">Makeup</button>
+        <button class="filter-btn" onclick="filterProducts('Wellness',this)">Wellness</button>
+      </div>
+    </div>
+    <div>
+      <div class="products-header">
+        <div id="products-count" style="font-size:14px;color:var(--text2);">Showing all products</div>
+        <button class="btn-gold" style="padding:10px 20px;font-size:14px;" onclick="showPage('checkout')"><i class="fa fa-shopping-cart"></i> View Cart (<span id="shop-cart-count">0</span>)</button>
+      </div>
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT PAGE ===== -->
+<div id="checkout-page" class="page" style="display:none">
+  <div class="checkout-wrap">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+      <button onclick="history.back();showPage('shop')" style="background:var(--cream-dark);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:inherit;"><i class="fa fa-arrow-left"></i> Back to Shop</button>
+      <h1 style="font-family:'Playfair Display',serif;font-size:28px;">Your Cart</h1>
+    </div>
+    <div id="empty-cart-msg" class="empty-cart-msg" style="display:none;">
+      <div style="font-size:64px;margin-bottom:16px;">🛒</div>
+      <h3 style="margin-bottom:8px;">Your cart is empty</h3>
+      <p style="margin-bottom:20px;">Add some products or classes to get started!</p>
+      <button class="btn-gold" onclick="showPage('shop')"><i class="fa fa-shopping-bag"></i> Browse Products</button>
+    </div>
+    <div class="checkout-grid" id="checkout-content">
+      <div class="checkout-form-section">
+        <h2 style="font-size:20px;margin-bottom:24px;"><i class="fa fa-user" style="color:var(--gold);margin-right:8px;"></i>Your Details</h2>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="co-name" placeholder="Enter your full name">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="co-phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="co-email" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Delivery Address *</label>
+          <textarea id="co-address" rows="3" placeholder="House No, Street, Area, City, PIN Code"></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitOrder()"><i class="fa fa-lock"></i> Proceed to Payment</button>
+      </div>
+      <div class="checkout-summary">
+        <h3 style="margin-bottom:16px;font-size:18px;"><i class="fa fa-receipt" style="color:var(--gold);margin-right:8px;"></i>Order Summary</h3>
+        <div id="cart-items-list"></div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="cart-total" style="color:var(--gold);">₹0</span>
+        </div>
+        <p style="font-size:12px;color:var(--text3);margin-top:12px;text-align:center;"><i class="fa fa-shield-alt" style="color:var(--success);"></i> Secure Payment via UPI QR Code</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADMIN LOGIN ===== -->
+<div id="admin-login" style="display:none;min-height:100vh;background:linear-gradient(135deg,var(--dark),var(--dark2));align-items:center;justify-content:center;padding:24px">
+  <div style="background:var(--white);border-radius:var(--border-r-lg);padding:48px 40px;width:100%;max-width:420px;">
+    <h1 style="text-align:center;margin-bottom:24px;">Admin Panel</h1>
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" id="admin-user" placeholder="Enter Username">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="admin-pass" placeholder="Enter Password">
+    </div>
+    <button class="btn-submit" onclick="adminLogin()"><i class="fa fa-sign-in-alt"></i> Login</button>
+    <div style="text-align:center;margin-top:24px">
+      <button onclick="showPage('home')" style="background:none;border:none;cursor:pointer;font-family:inherit;color:var(--text3);"><i class="fa fa-arrow-left"></i> Back to Website</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="admin-panel" style="display:none">
+  <div class="admin-nav">
+    <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:18px;font-weight:600">Be U — Admin</div>
+    <div class="admin-nav-links">
+      <button onclick="adminTab('products')" class="active" id="tab-products">🛍️ Products</button>
+      <button onclick="adminTab('classes')" id="tab-classes">📚 Classes</button>
+      <button onclick="adminTab('gallery')" id="tab-gallery">🖼️ Gallery</button>
+    </div>
+    <div>
+      <button onclick="adminLogout()" style="background:rgba(255,255,255,0.1);border:none;color:white;padding:6px 12px;border-radius:6px;cursor:pointer;">Logout</button>
+    </div>
+  </div>
+
+  <div class="admin-content">
+
+    <!-- PRODUCTS ADMIN -->
+    <div class="admin-section active" id="admin-products">
+      <div style="display:flex;justify-content:space-between;margin-bottom:24px;">
+        <h2>🛍️ Products Manager</h2>
+        <button style="background:var(--gold);border:none;padding:8px 16px;border-radius:8px;font-weight:bold;cursor:pointer;" onclick="openProductModal()"><i class="fa fa-plus"></i> Add Product</button>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Actions</th></tr></thead>
+          <tbody id="admin-products-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CLASSES ADMIN -->
+    <div class="admin-section" id="admin-classes">
+      <div style="display:flex;justify-content:space-between;margin-bottom:24px;">
+        <h2>📚 Classes Manager</h2>
+        <button style="background:var(--gold);border:none;padding:8px 16px;border-radius:8px;font-weight:bold;cursor:pointer;" onclick="openClassModal()"><i class="fa fa-plus"></i> Add Class</button>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Image</th><th>Course</th><th>Duration</th><th>Price</th><th>Actions</th></tr></thead>
+          <tbody id="admin-classes-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GALLERY ADMIN -->
+    <div class="admin-section" id="admin-gallery">
+      <div style="display:flex;justify-content:space-between;margin-bottom:24px;">
+        <h2>🖼️ Gallery Manager</h2>
+      </div>
+      <div style="background:var(--white);padding:20px;border-radius:12px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-end;">
+        <div class="form-group" style="flex:1;margin-bottom:0;">
+          <label>Image URL</label>
+          <input type="text" id="new-gallery-url" placeholder="https://example.com/image.jpg">
+        </div>
+        <button class="btn-submit" style="width:auto;padding:12px 24px;" onclick="addGalleryImage()"><i class="fa fa-plus"></i> Add Image</button>
+      </div>
+      <div class="admin-gallery-grid" id="admin-gallery-grid"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== MODALS ===== -->
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="product-modal">
+  <div class="modal">
+    <button style="position:absolute;top:16px;right:16px;border:none;background:none;font-size:20px;cursor:pointer;" onclick="closeModal('product-modal')">✕</button>
+    <h2 id="product-modal-title" style="margin-bottom:20px;">Add Product</h2>
+    <input type="hidden" id="edit-product-id">
+    <div class="form-group"><label>Product Name</label><input type="text" id="prod-name" placeholder="e.g. Vitamin C Serum"></div>
+    <div class="form-group"><label>Category</label><select id="prod-cat"><option>Skincare</option><option>Haircare</option><option>Makeup</option><option>Wellness</option></select></div>
+    <div class="form-group"><label>Description</label><textarea id="prod-desc" rows="2" placeholder="Short product description"></textarea></div>
+    <div class="form-group"><label>Price (₹)</label><input type="number" id="prod-price" placeholder="499"></div>
+    <div class="form-group"><label>Image URL</label><input type="text" id="prod-img-url" placeholder="https://..."></div>
+    <button class="btn-submit" onclick="saveProduct()"><i class="fa fa-save"></i> Save Product</button>
+  </div>
+</div>
+
+<!-- CLASS MODAL -->
+<div class="modal-overlay" id="class-admin-modal">
+  <div class="modal">
+    <button style="position:absolute;top:16px;right:16px;border:none;background:none;font-size:20px;cursor:pointer;" onclick="closeModal('class-admin-modal')">✕</button>
+    <h2 id="class-modal-title" style="margin-bottom:20px;">Add Class</h2>
+    <input type="hidden" id="edit-class-id">
+    <div class="form-group"><label>Course Name</label><input type="text" id="cls-name" placeholder="e.g. Bridal Makeup Masterclass"></div>
+    <div class="form-group"><label>Description</label><textarea id="cls-desc" rows="2" placeholder="Course description"></textarea></div>
+    <div class="form-group"><label>Duration</label><input type="text" id="cls-duration" placeholder="e.g. 3 Months"></div>
+    <div class="form-group"><label>Price (₹)</label><input type="number" id="cls-price" placeholder="15000"></div>
+    <div class="form-group"><label>Image URL</label><input type="text" id="cls-img-url" placeholder="https://..."></div>
+    <button class="btn-submit" onclick="saveClass()"><i class="fa fa-save"></i> Save Class</button>
+  </div>
+</div>
+
+<!-- GALLERY EDIT MODAL -->
+<div class="modal-overlay" id="gallery-edit-modal">
+  <div class="modal" style="max-width:420px;">
+    <button style="position:absolute;top:16px;right:16px;border:none;background:none;font-size:20px;cursor:pointer;" onclick="closeModal('gallery-edit-modal')">✕</button>
+    <h2 style="margin-bottom:20px;">✏️ Edit Gallery Image</h2>
+    <input type="hidden" id="edit-gallery-id">
+    <div style="margin-bottom:16px;border-radius:10px;overflow:hidden;background:var(--cream-dark);text-align:center;padding:8px;">
+      <img id="gallery-edit-preview" src="" style="max-height:160px;border-radius:8px;object-fit:cover;">
+    </div>
+    <div class="form-group">
+      <label>New Image URL</label>
+      <input type="text" id="edit-gallery-url" placeholder="https://...">
+    </div>
+    <button class="btn-submit" onclick="saveGalleryEdit()"><i class="fa fa-save"></i> Update Image</button>
+  </div>
+</div>
+
+<!-- QR PAYMENT MODAL -->
+<div class="modal-overlay" id="qr-modal">
+  <div class="modal" style="max-width:440px;">
+    <button style="position:absolute;top:16px;right:16px;border:none;background:none;font-size:20px;cursor:pointer;" onclick="closeModal('qr-modal')">✕</button>
+    <div class="qr-modal-inner">
+      <h2 style="margin-bottom:8px;">💳 Complete Payment</h2>
+      <p style="color:var(--text3);font-size:14px;margin-bottom:4px;">Scan the QR code below to pay via UPI</p>
+      <div class="qr-amount" id="qr-total-display">₹0</div>
+      <div class="qr-img-wrap">
+        <img id="qr-code-img" src="" alt="UPI QR Code">
+      </div>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:4px;"><strong>UPI ID:</strong> mamta@upi &nbsp;|&nbsp; <strong>Name:</strong> Mamta Beauty Care</p>
+      <p style="font-size:12px;color:var(--text3);margin-bottom:16px;">After payment, click the button below and send your screenshot on WhatsApp</p>
+      <button class="btn-paid" onclick="confirmPayment()"><i class="fa fa-check-circle"></i> I've Paid — Send Screenshot on WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS POPUP -->
+<div id="success-popup">
+  <div class="success-box">
+    <div class="success-icon">🎉</div>
+    <h2>Order Confirmed!</h2>
+    <p>Thank you! <strong id="success-name"></strong>, your order has been received.<br><br>
+    <span style="font-size:22px;">🌸</span><br>
+    <strong style="color:var(--gold);font-size:16px;">Your product is starting to prepare!</strong><br><br>
+    We will contact you on <strong id="success-phone"></strong> shortly for delivery confirmation.</p>
+    <button class="btn-gold" onclick="closeSuccessPopup()" style="width:100%;justify-content:center;">
+      <i class="fa fa-home"></i> Back to Home
+    </button>
+  </div>
+</div>
+
+<a href="https://wa.me/918433539825" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+// ===== DATA STORE =====
+let products = [], classes = [], services = [], gallery = [], cart = [];
+
+function initData(){
+  services = [
+    {id:1,name:'Acne Treatment',desc:'Advanced acne treatment for clear, glowing skin',emoji:'✨'},
+    {id:2,name:'Blow Dry',desc:'Professional blow dry styling for all hair types',emoji:'💨'},
+    {id:3,name:'Eyelashes',desc:'Lash extensions and styling services',emoji:'👁️'},
+    {id:4,name:'Haircut',desc:'Expert haircut and styling for all lengths',emoji:'✂️'},
+    {id:5,name:'Hair Extensions',desc:'Premium quality hair extension services',emoji:'💇‍♀️'},
+    {id:6,name:'Makeup',desc:'Professional makeup for all occasions',emoji:'💄'},
+    {id:7,name:'Shampoo & Conditioner',desc:'Deep cleanse and conditioning treatment',emoji:'🫧'},
+    {id:8,name:'Bridal Preparation',desc:'Complete bridal package for your special day',emoji:'👰'}
+  ];
+  products = [
+    {id:1,name:'Vitamin C Face Serum',category:'Skincare',desc:'Brightening serum for radiant skin',price:799,imgUrl:'https://houseofdearhairsalon.com/wp-content/uploads/2022/04/5-Salon-Hair-Treatments-to-Fix-Your-Hair-From-Root-to-Tip.jpg'},
+    {id:2,name:'Keratin Hair Mask',category:'Haircare',desc:'Deep conditioning mask for smooth hair',price:649,imgUrl:'https://theluxesalon.ca/wp-content/uploads/2026/01/Best-Salon-Luxe-Hair-1.jpg'},
+    {id:3,name:'Matte Lipstick Set',category:'Makeup',desc:'Set of 6 long-lasting matte lipsticks',price:599,imgUrl:'https://franckprovost.in/wp-content/uploads/2026/02/image-2.jpeg'},
+    {id:4,name:'Rose Water Toner',category:'Skincare',desc:'Pure rose water toner',price:249,imgUrl:'https://toniandguyindia.com/wp-content/uploads/2024/11/T2-1-min.webp'}
+  ];
+  classes = [
+    {id:1,name:'Bridal Makeup Masterclass',desc:'Complete bridal makeup course covering all techniques.',duration:'3 Months',price:15000,imgUrl:'https://expressrutbar.com/wp-content/uploads/2021/09/rutbar2.jpg'},
+    {id:2,name:'Advanced Hair Styling',desc:'Professional hair styling course including cuts, coloring, extensions.',duration:'2 Months',price:12000,imgUrl:'https://franckprovost.in/wp-content/uploads/2025/11/hairstylist-client-taking-salon-scaled.jpg'},
+    {id:3,name:'Skin Care Expert Course',desc:'In-depth skincare course covering facials, acne treatments.',duration:'6 Weeks',price:8000,imgUrl:'https://houseofdearhairsalon.com/wp-content/uploads/2022/04/5-Salon-Hair-Treatments-to-Fix-Your-Hair-From-Root-to-Tip.jpg'}
+  ];
+  gallery = [
+    {id:1,url:'https://houseofdearhairsalon.com/wp-content/uploads/2022/04/5-Salon-Hair-Treatments-to-Fix-Your-Hair-From-Root-to-Tip.jpg'},
+    {id:2,url:'https://theluxesalon.ca/wp-content/uploads/2026/01/Best-Salon-Luxe-Hair-1.jpg'},
+    {id:3,url:'https://franckprovost.in/wp-content/uploads/2026/02/image-2.jpeg'},
+    {id:4,url:'https://expressrutbar.com/wp-content/uploads/2021/09/rutbar2.jpg'},
+    {id:5,url:'https://franckprovost.in/wp-content/uploads/2025/11/hairstylist-client-taking-salon-scaled.jpg'}
+  ];
+}
+
+// ===== CART =====
+function addToCart(item, type){
+  const existing = cart.find(c => c.id === item.id && c.type === type);
+  if(existing){ existing.qty = (existing.qty || 1) + 1; }
+  else { cart.push({...item, type, qty:1}); }
+  updateCartBadge();
+  showCartToast(item.name);
+}
+
+function updateCartBadge(){
+  const total = cart.reduce((s,c) => s + (c.qty||1), 0);
+  document.getElementById('cart-count').textContent = total;
+  const mobileEl = document.getElementById('mobile-cart-count');
+  if(mobileEl) mobileEl.textContent = total;
+  const shopEl = document.getElementById('shop-cart-count');
+  if(shopEl) shopEl.textContent = total;
+}
+
+function showCartToast(name){
+  const t = document.createElement('div');
+  t.style.cssText = 'position:fixed;bottom:90px;right:24px;background:#2E7D32;color:white;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;z-index:5000;box-shadow:0 4px 16px rgba(0,0,0,0.2);animation:slideIn 0.3s ease;';
+  t.innerHTML = '✅ "' + name + '" added to cart!';
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2500);
+}
+
+function removeFromCart(id, type){
+  cart = cart.filter(c => !(c.id === id && c.type === type));
+  updateCartBadge();
+  renderCheckoutPage();
+}
+
+// ===== RENDER FUNCTIONS =====
+function renderServices(){
+  document.getElementById('services-grid').innerHTML = services.map(s => `
+    <div class="service-card">
+      <div class="service-icon">${s.emoji}</div>
+      <h3>${s.name}</h3><p>${s.desc}</p>
+    </div>
+  `).join('');
+}
+
+function renderTicker(){
+  const wrap = document.getElementById('ticker-wrap');
+  const items = services.map(s => `<span>${s.emoji} ${s.name}</span>`).join('');
+  wrap.innerHTML = items + items;
+}
+
+function renderClasses(){
+  document.getElementById('classes-grid').innerHTML = classes.map(c => `
+    <div class="class-card">
+      <div class="class-img"><img src="${c.imgUrl}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+      <div class="class-body">
+        <h3>${c.name}</h3>
+        <p>${c.desc}</p>
+        <div style="font-size:13px;color:gray;margin-bottom:10px;"><i class="fa fa-calendar"></i> ${c.duration}</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+          <div class="class-price">₹${Number(c.price).toLocaleString()}</div>
+          <button class="btn-add-cart" onclick="addToCart({id:${c.id},name:'${c.name.replace(/'/g,"\'")}',price:${c.price},imgUrl:'${c.imgUrl}',category:'Course',desc:'${c.duration}'},'class')">
+            <i class="fa fa-cart-plus"></i> Enroll
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderProducts(filter = 'All'){
+  const grid = document.getElementById('products-grid');
+  let filtered = filter === 'All' ? products : products.filter(p => p.category === filter);
+  document.getElementById('products-count').innerText = `Showing ${filtered.length} products`;
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      <div class="product-img"><img src="${p.imgUrl}" onerror="this.style.display='none'"></div>
+      <div class="product-body">
+        <div class="product-category">${p.category}</div>
+        <h3>${p.name}</h3>
+        <p style="font-size:13px;color:gray;min-height:36px;">${p.desc}</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;">
+          <div class="product-price">₹${Number(p.price).toLocaleString()}</div>
+          <button class="btn-add-cart" onclick="addToCart({id:${p.id},name:'${p.name.replace(/'/g,"\'")}',price:${p.price},imgUrl:'${p.imgUrl}',category:'${p.category}',desc:'${p.desc.replace(/'/g,"\'")}'},'product')">
+            <i class="fa fa-cart-plus"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat, btn){
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+function renderGallery(){
+  const publicGrid = document.getElementById('public-gallery-grid');
+  if(publicGrid){
+    publicGrid.innerHTML = gallery.map(g => `
+      <div class="gallery-item"><img src="${g.url}" alt="Gallery Image" loading="lazy"></div>
+    `).join('');
+  }
+}
+
+// ===== CHECKOUT PAGE =====
+function renderCheckoutPage(){
+  const isEmpty = cart.length === 0;
+  document.getElementById('empty-cart-msg').style.display = isEmpty ? 'block' : 'none';
+  document.getElementById('checkout-content').style.display = isEmpty ? 'none' : 'grid';
+  if(isEmpty) return;
+
+  const listEl = document.getElementById('cart-items-list');
+  listEl.innerHTML = cart.map(item => `
+    <div class="summary-item">
+      <img class="summary-item-img" src="${item.imgUrl}" alt="${item.name}" onerror="this.style.background='var(--cream-dark)'">
+      <div class="summary-item-info">
+        <strong>${item.name}</strong>
+        <span>${item.category} ${item.qty > 1 ? '× ' + item.qty : ''}</span>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-weight:700;color:var(--gold);">₹${(Number(item.price) * (item.qty||1)).toLocaleString()}</div>
+        <button onclick="removeFromCart(${item.id},'${item.type}')" style="background:none;border:none;color:var(--danger);cursor:pointer;font-size:12px;margin-top:4px;">🗑️ Remove</button>
+      </div>
+    </div>
+  `).join('');
+
+  const total = cart.reduce((s,c) => s + Number(c.price) * (c.qty||1), 0);
+  document.getElementById('cart-total').textContent = '₹' + total.toLocaleString();
+}
+
+// ===== ORDER SUBMIT =====
+function submitOrder(){
+  const name = document.getElementById('co-name').value.trim();
+  const phone = document.getElementById('co-phone').value.trim();
+  const email = document.getElementById('co-email').value.trim();
+  const address = document.getElementById('co-address').value.trim();
+
+  if(!name || !phone || !email || !address){
+    alert('⚠️ Please fill in all required fields.'); return;
+  }
+  if(cart.length === 0){ alert('Your cart is empty!'); return; }
+
+  const total = cart.reduce((s,c) => s + Number(c.price) * (c.qty||1), 0);
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=8433539825@paytm%26pn=MamtaBeautyCare%26am=${total}%26cu=INR%26tn=BeUBeautyCare`;
+  document.getElementById('qr-code-img').src = qrUrl;
+  document.getElementById('qr-total-display').textContent = '₹' + total.toLocaleString();
+
+  window._orderCustomer = {name, phone, email, address, total};
+  document.getElementById('qr-modal').classList.add('open');
+}
+
+// ===== PAYMENT CONFIRM =====
+function confirmPayment(){
+  closeModal('qr-modal');
+  const c = window._orderCustomer || {};
+  const itemsList = cart.map(i => `• ${i.name} (₹${Number(i.price).toLocaleString()} × ${i.qty||1})`).join('%0A');
+  const msg = `Hello Mamta! 🌸%0A%0AI have completed the payment.%0A%0A*Order Details:*%0AName: ${encodeURIComponent(c.name)}%0APhone: ${encodeURIComponent(c.phone)}%0AEmail: ${encodeURIComponent(c.email)}%0AAddress: ${encodeURIComponent(c.address)}%0A%0A*Items:*%0A${itemsList}%0A%0A*Total Paid: ₹${c.total}*%0A%0APlease find my payment screenshot attached. 📸`;
+  window.open(`https://wa.me/918433539825?text=${msg}`, '_blank');
+
+  document.getElementById('success-name').textContent = c.name;
+  document.getElementById('success-phone').textContent = c.phone;
+  document.getElementById('success-popup').classList.add('open');
+}
+
+function closeSuccessPopup(){
+  document.getElementById('success-popup').classList.remove('open');
+  cart = [];
+  updateCartBadge();
+  showPage('home');
+}
+
+// ===== NAVIGATION =====
+function showPage(page){
+  ['home','classes','shop','checkout','admin-login','admin-panel'].forEach(p => {
+    const el = document.getElementById(p + '-page') || document.getElementById(p);
+    if(el) el.style.display = 'none';
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+
+  if(page==='home'){ document.getElementById('home-page').style.display='block'; document.getElementById('nav-home').classList.add('active'); }
+  if(page==='classes'){ document.getElementById('classes-page').style.display='block'; document.getElementById('nav-classes').classList.add('active'); }
+  if(page==='shop'){ document.getElementById('shop-page').style.display='block'; document.getElementById('nav-shop').classList.add('active'); }
+  if(page==='checkout'){ document.getElementById('checkout-page').style.display='block'; renderCheckoutPage(); }
+  window.scrollTo(0,0);
+}
+
+function scrollToSection(id){ setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}),100); }
+function toggleMobileMenu(){ document.getElementById('mobile-menu').classList.toggle('open'); }
+function closeMobileMenu(){ document.getElementById('mobile-menu').classList.remove('open'); }
+
+// ===== ADMIN =====
+function showAdminLogin(){
+  ['home-page','classes-page','shop-page','checkout-page'].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display='none'; });
+  document.getElementById('admin-login').style.display='flex';
+}
+
+function adminLogin(){
+  if(document.getElementById('admin-user').value==='Admin' && document.getElementById('admin-pass').value==='Admin@961'){
+    document.getElementById('admin-login').style.display='none';
+    document.getElementById('admin-panel').style.display='block';
+    renderAdminProducts(); renderAdminClasses(); renderAdminGallery();
+  } else { alert('Invalid Credentials'); }
+}
+function adminLogout(){ document.getElementById('admin-panel').style.display='none'; showPage('home'); }
+
+function adminTab(tab){
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-links button').forEach(b=>b.classList.remove('active'));
+  const s=document.getElementById('admin-'+tab); if(s) s.classList.add('active');
+  const b=document.getElementById('tab-'+tab); if(b) b.classList.add('active');
+}
+
+// ADMIN PRODUCTS
+function renderAdminProducts(){
+  document.getElementById('admin-products-body').innerHTML = products.map(p => `
+    <tr>
+      <td><div class="admin-thumb"><img src="${p.imgUrl}" onerror="this.style.display='none'"></div></td>
+      <td><strong>${p.name}</strong></td><td>${p.category}</td><td>₹${Number(p.price).toLocaleString()}</td>
+      <td>
+        <button style="background:var(--cream-dark);border:none;padding:6px 10px;cursor:pointer;border-radius:6px;margin-right:4px;" onclick="editProduct(${p.id})">✏️ Edit</button>
+        <button style="background:#FADBD8;border:none;padding:6px 10px;cursor:pointer;border-radius:6px;" onclick="deleteProduct(${p.id})">🗑️</button>
+      </td>
+    </tr>
+  `).join('');
+}
+function openProductModal(id){
+  document.getElementById('edit-product-id').value = id || '';
+  document.getElementById('product-modal-title').textContent = id ? 'Edit Product' : 'Add Product';
+  if(id){
+    const p=products.find(x=>x.id===id);
+    document.getElementById('prod-name').value=p.name;
+    document.getElementById('prod-cat').value=p.category;
+    document.getElementById('prod-desc').value=p.desc;
+    document.getElementById('prod-price').value=p.price;
+    document.getElementById('prod-img-url').value=p.imgUrl;
+  } else {
+    ['prod-name','prod-desc','prod-price','prod-img-url'].forEach(i=>document.getElementById(i).value='');
+  }
+  document.getElementById('product-modal').classList.add('open');
+}
+function editProduct(id){ openProductModal(id); }
+function deleteProduct(id){ if(confirm('Delete Product?')){ products=products.filter(p=>p.id!==id); renderAdminProducts(); renderProducts(); } }
+function saveProduct(){
+  const id=document.getElementById('edit-product-id').value;
+  const p={name:document.getElementById('prod-name').value,category:document.getElementById('prod-cat').value,desc:document.getElementById('prod-desc').value,price:document.getElementById('prod-price').value,imgUrl:document.getElementById('prod-img-url').value||'https://expressrutbar.com/wp-content/uploads/2021/09/rutbar2.jpg'};
+  if(id){ const idx=products.findIndex(x=>x.id==id); if(idx!==-1) products[idx]={...products[idx],...p}; }
+  else { p.id=Date.now(); products.push(p); }
+  closeModal('product-modal'); renderAdminProducts(); renderProducts();
+}
+
+// ADMIN CLASSES
+function renderAdminClasses(){
+  document.getElementById('admin-classes-body').innerHTML = classes.map(c => `
+    <tr>
+      <td><div class="admin-thumb"><img src="${c.imgUrl}" onerror="this.style.display='none'"></div></td>
+      <td><strong>${c.name}</strong></td><td>${c.duration}</td><td>₹${Number(c.price).toLocaleString()}</td>
+      <td>
+        <button style="background:var(--cream-dark);border:none;padding:6px 10px;cursor:pointer;border-radius:6px;margin-right:4px;" onclick="editClass(${c.id})">✏️ Edit</button>
+        <button style="background:#FADBD8;border:none;padding:6px 10px;cursor:pointer;border-radius:6px;" onclick="deleteClass(${c.id})">🗑️</button>
+      </td>
+    </tr>
+  `).join('');
+}
+function openClassModal(id){
+  document.getElementById('edit-class-id').value=id||'';
+  document.getElementById('class-modal-title').textContent=id?'Edit Class':'Add Class';
+  if(id){
+    const c=classes.find(x=>x.id===id);
+    document.getElementById('cls-name').value=c.name;
+    document.getElementById('cls-desc').value=c.desc;
+    document.getElementById('cls-duration').value=c.duration;
+    document.getElementById('cls-price').value=c.price;
+    document.getElementById('cls-img-url').value=c.imgUrl;
+  } else {
+    ['cls-name','cls-desc','cls-duration','cls-price','cls-img-url'].forEach(i=>document.getElementById(i).value='');
+  }
+  document.getElementById('class-admin-modal').classList.add('open');
+}
+function editClass(id){ openClassModal(id); }
+function deleteClass(id){ if(confirm('Delete Class?')){ classes=classes.filter(c=>c.id!==id); renderAdminClasses(); renderClasses(); } }
+function saveClass(){
+  const id=document.getElementById('edit-class-id').value;
+  const c={name:document.getElementById('cls-name').value,desc:document.getElementById('cls-desc').value,duration:document.getElementById('cls-duration').value,price:document.getElementById('cls-price').value,imgUrl:document.getElementById('cls-img-url').value||'https://franckprovost.in/wp-content/uploads/2025/11/hairstylist-client-taking-salon-scaled.jpg'};
+  if(id){ const idx=classes.findIndex(x=>x.id==id); if(idx!==-1) classes[idx]={...classes[idx],...c}; }
+  else { c.id=Date.now(); classes.push(c); }
+  closeModal('class-admin-modal'); renderAdminClasses(); renderClasses();
+}
+
+// ADMIN GALLERY
+function renderAdminGallery(){
+  const grid=document.getElementById('admin-gallery-grid');
+  grid.innerHTML=gallery.map(g=>`
+    <div class="admin-gallery-card">
+      <img src="${g.url}" alt="Gallery" loading="lazy">
+      <div class="gallery-actions">
+        <button onclick="openGalleryEdit(${g.id})" style="background:var(--gold);color:var(--dark);border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">✏️ Edit</button>
+        <button onclick="deleteGalleryImage(${g.id})" style="background:var(--danger);color:white;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-size:12px;">🗑️</button>
+      </div>
+    </div>
+  `).join('');
+}
+function addGalleryImage(){
+  const url=document.getElementById('new-gallery-url').value.trim();
+  if(!url){ alert('Please enter a valid image URL'); return; }
+  gallery.push({id:Date.now(),url});
+  document.getElementById('new-gallery-url').value='';
+  renderAdminGallery(); renderGallery();
+}
+function deleteGalleryImage(id){
+  if(confirm('Delete this image from gallery?')){ gallery=gallery.filter(g=>g.id!==id); renderAdminGallery(); renderGallery(); }
+}
+function openGalleryEdit(id){
+  const g=gallery.find(x=>x.id===id);
+  document.getElementById('edit-gallery-id').value=id;
+  document.getElementById('edit-gallery-url').value=g.url;
+  document.getElementById('gallery-edit-preview').src=g.url;
+  document.getElementById('gallery-edit-modal').classList.add('open');
+}
+function saveGalleryEdit(){
+  const id=Number(document.getElementById('edit-gallery-id').value);
+  const url=document.getElementById('edit-gallery-url').value.trim();
+  if(!url){ alert('Please enter a valid URL'); return; }
+  const idx=gallery.findIndex(g=>g.id===id);
+  if(idx!==-1) gallery[idx].url=url;
+  closeModal('gallery-edit-modal'); renderAdminGallery(); renderGallery();
+}
+
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+// INIT
+initData();
+renderServices();
+renderTicker();
+renderClasses();
+renderProducts();
+renderGallery();
+</script>
+</body>
+</html>
